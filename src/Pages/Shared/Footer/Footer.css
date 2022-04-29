@@ -1,0 +1,33 @@
+.footer-area {
+    background: linear-gradient(rgba(162, 155, 254, 5.0), rgba(116, 185, 255, 5.0));
+    overflow-x: hidden;
+}
+
+.footer-menu ul li,
+.social-icons ul li {
+    list-style: none;
+    text-align-last: left;
+
+}
+
+.footer-menu ul li a,
+.footer-menu ul li a {
+    text-decoration: none;
+    color: #2d3436;
+    font-size: 16px;
+}
+
+.footer-menu ul li a:hover {
+    color: #232323;
+    font-weight: bold;
+}
+
+.title-block {
+    font-size: 16px;
+    color: #232323;
+    margin-bottom: 20px;
+    font-family: Oswald, HelveticaNeue, Helvetica Neue, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
