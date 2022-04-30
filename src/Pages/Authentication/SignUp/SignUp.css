@@ -10,7 +10,7 @@ figure {
 }
 
 .form-submit {
-    display: inline-block;
+
     background-image: linear-gradient(to right, #21a2fd 0%, #7967fe 100%);
     color: #fff;
     border-radius: 10px;
@@ -19,7 +19,14 @@ figure {
     padding: 15px 39px;
     margin-top: 15px;
     cursor: pointer;
+    box-shadow: 10px 10px 30px #b2bec3;
+    transition: .5s ease-in-out;
 
+}
+
+.form-submit:hover {
+    box-shadow: none;
+    transform: scale(1.1);
 }
 
 .text-gadget {
@@ -66,6 +73,12 @@ input[type="checkbox"] {
 .socials li {
     list-style: none;
     margin-right: 10px;
+}
+
+.socials li svg:hover {
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
 .signin-content {

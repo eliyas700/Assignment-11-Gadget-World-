@@ -1,5 +1,6 @@
 import React from "react";
-import { FaFacebookSquare, FaTwitter, FaGithub } from "react-icons/fa";
+import { FaFacebookSquare, FaGithub } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 const Sociallogin = () => {
   return (
     <div class="d-flex justify-content-center my-4">
@@ -9,7 +10,7 @@ const Sociallogin = () => {
           <FaFacebookSquare color="#4867AA" size={30} />
         </li>
         <li>
-          <FaTwitter color="#1DA1F2" size={30} />
+          <FcGoogle size={30} />
         </li>
         <li>
           <FaGithub color="#1B1F23" size={30} />
