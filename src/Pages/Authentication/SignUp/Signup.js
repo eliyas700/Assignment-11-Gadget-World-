@@ -1,17 +1,15 @@
 import React from "react";
-import {
-  FaFacebookSquare,
-  FaTwitter,
-  FaGithub,
-  FaUserAlt,
-  FaLock,
-} from "react-icons/fa";
+import { FaUserAlt, FaLock } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 import { FiLock } from "react-icons/fi";
 import "./SignUp.css";
+import Sociallogin from "../SocialLogin/Sociallogin";
+import { Link } from "react-router-dom";
+import PageTitle from "../../Shared/PageTitle/PageTitle";
 const Signup = () => {
   return (
     <section className="signup">
+      <PageTitle title="Sign Up "></PageTitle>
       <div className="container">
         <div className="signup-content row justify-content-between">
           <div className="m-0 col-12 col-lg-6">
@@ -83,22 +81,11 @@ const Signup = () => {
                 />
               </div>
             </form>
-            <button className="text-gadget btn btn-link">
+            <Link to="/login" className="text-gadget text-start ">
               Already have an account?
-            </button>
-            <div class="d-flex justify-content-center my-4">
-              <p class="social-label">Or login with</p>
-              <ul class="socials d-flex ">
-                <li>
-                  <FaFacebookSquare color="#4867AA" size={30} />
-                </li>
-                <li>
-                  <FaTwitter color="#1DA1F2" size={30} />
-                </li>
-                <li>
-                  <FaGithub color="#1B1F23" size={30} />
-                </li>
-              </ul>
+            </Link>
+            <div>
+              <Sociallogin></Sociallogin>
             </div>
           </div>
           <div className="signup-image col-12 col-lg-6">
