@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import Reviews from "../Customer-review/Reviews";
 import Items from "../Items/Items";
+import Team from "../Team/Team";
 import "./Home.css";
 const Home = () => {
   const [index, setIndex] = useState(0);
@@ -56,6 +57,9 @@ const Home = () => {
       <Items></Items>
       <div className="position-relative">
         <Reviews></Reviews>
+      </div>
+      <div>
+        <Team></Team>
       </div>
     </div>
   );
