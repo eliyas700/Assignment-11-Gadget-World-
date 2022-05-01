@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import Reviews from "../Customer-review/Reviews";
 import Items from "../Items/Items";
+import Speciality from "../Speciality/Speciality";
 import Team from "../Team/Team";
 import "./Home.css";
 const Home = () => {
@@ -57,6 +58,12 @@ const Home = () => {
       <Items></Items>
       <div className="position-relative">
         <Reviews></Reviews>
+      </div>
+      <div>
+        <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
+          Why Us?
+        </h2>
+        <Speciality></Speciality>
       </div>
       <div>
         <Team></Team>

@@ -8,7 +8,7 @@ const Team = () => {
       <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
         Our Team Members
       </h2>
-      <div className="team-container row mx-auto">
+      <div className="team-container row justify-content-center">
         <div class="card col-12 col-lg-4">
           <div class="face face1">
             <div class="content">
