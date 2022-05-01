@@ -4,7 +4,7 @@ const Speciality = () => {
   return (
     <div>
       <div class="special-container m-0 row justify-content-center align-items-center">
-        <div class="card col-12 col-lg-4">
+        <div class="card mx-3 col-12 col-lg-4">
           <div class="face face1">
             <div class="content">
               <img src="https://i.ibb.co/xg2mMq9/p-1-72x.webp" />
@@ -21,7 +21,7 @@ const Speciality = () => {
             </div>
           </div>
         </div>
-        <div class="card col-12 col-lg-4">
+        <div class="card mx-3 col-12 col-lg-4">
           <div class="face face1">
             <div class="content">
               <img src="https://i.ibb.co/P1Yf5nF/p-2-72x.webp" />
@@ -34,14 +34,14 @@ const Speciality = () => {
                 We have Strong Money Back Policy .Got a problem with the
                 product? Don't worry, we have a 30 day money back guarantee.
               </p>
-              <a href="#">Read More</a>
+              <a href="/">Read More</a>
             </div>
           </div>
         </div>
-        <div class="card col-12 col-lg-4">
+        <div class="card mx-3 col-12 col-lg-4">
           <div class="face face1">
             <div class="content">
-              <img src="https://i.ibb.co/KVLjCyd/p-3-72x.webp" />
+              <img src="https://i.ibb.co/KVLjCyd/p-3-72x.webp" alt="" />
               <h3>Authenticity & World Wide Delivery </h3>
             </div>
           </div>

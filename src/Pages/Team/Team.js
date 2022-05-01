@@ -8,8 +8,8 @@ const Team = () => {
       <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
         Our Team Members
       </h2>
-      <div className="team-container row justify-content-center">
-        <div class="card col-12 col-lg-4">
+      <div className=" mb-3 team-container row justify-content-center">
+        <div class="card mx-2 col-12 col-lg-4">
           <div class="face face1">
             <div class="content">
               <div class="icon">
@@ -48,7 +48,7 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <div class="card col-12 col-lg-4">
+        <div class="card mx-2 p-0 col-12 col-lg-4">
           <div class="face face1">
             <div class="content">
               <div class="icon">
@@ -87,7 +87,7 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <div class="card col-12 col-lg-4">
+        <div class="card mx-2 p-0 col-12 col-lg-4">
           <div class="face face1">
             <div class="content">
               <div class="icon">

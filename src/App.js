@@ -9,6 +9,7 @@ import Login from "./Pages/Authentication/LogIn/Login";
 import Reviews from "./Pages/Customer-review/Reviews";
 import Item from "./Pages/Item/Item";
 import Allitems from "./Pages/Allitems/Allitems";
+import NotFound from "./Pages/Shared/404/NotFound";
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/review" element={<Reviews></Reviews>}></Route>
         <Route path="/item" element={<Allitems></Allitems>}></Route>
+        <Route path="/*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
