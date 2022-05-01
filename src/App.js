@@ -7,6 +7,8 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import Signup from "./Pages/Authentication/SignUp/Signup";
 import Login from "./Pages/Authentication/LogIn/Login";
 import Reviews from "./Pages/Customer-review/Reviews";
+import Item from "./Pages/Item/Item";
+import Allitems from "./Pages/Allitems/Allitems";
 function App() {
   return (
     <div className="App">
@@ -16,6 +18,7 @@ function App() {
         <Route path="/signup" element={<Signup />}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/review" element={<Reviews></Reviews>}></Route>
+        <Route path="/item" element={<Allitems></Allitems>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

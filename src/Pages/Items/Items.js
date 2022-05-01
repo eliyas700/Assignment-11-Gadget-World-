@@ -1,13 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Item from "../Item/Item";
 import { AiOutlineDoubleRight } from "react-icons/ai";
+import useItems from "../../Hooks/useItems";
+import { Link } from "react-router-dom";
 const Items = () => {
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:5000/items")
-      .then((res) => res.json())
-      .then((data) => setItems(data));
-  }, []);
+  const [items, setItems] = useItems([]);
   return (
     <div>
       <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
@@ -18,9 +15,12 @@ const Items = () => {
           <Item key={item._id} item={item}></Item>
         ))}
       </div>
-      <button className="item-btn  my-4">
+      <Link
+        to="/item"
+        className="item-btn text-decoration-none d-inline-block my-4"
+      >
         See More Products <AiOutlineDoubleRight />
-      </button>
+      </Link>
     </div>
   );
 };
