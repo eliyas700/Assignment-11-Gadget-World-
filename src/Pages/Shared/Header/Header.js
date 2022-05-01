@@ -12,7 +12,7 @@ const Header = () => {
         collapseOnSelect
         expand="lg"
         style={{
-          backgroundImage: "linear-gradient(to right,#21a2fd 0%,#7967fe 100%)",
+          backgroundImage: "linear-gradient(to left,#21a2fd 0%,#7967fe 100%)",
         }}
       >
         <Container className="">

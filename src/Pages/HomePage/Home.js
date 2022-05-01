@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
+import Reviews from "../Customer-review/Reviews";
 import Items from "../Items/Items";
 import "./Home.css";
 const Home = () => {
@@ -53,6 +54,9 @@ const Home = () => {
         </Carousel.Item>
       </Carousel>
       <Items></Items>
+      <div className="position-relative">
+        <Reviews></Reviews>
+      </div>
     </div>
   );
 };

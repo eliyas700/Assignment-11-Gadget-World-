@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Orelega+One&family=Playfair+Display:ital,wght@1,600&family=Roboto+Slab:wght@400;600&display=swap');
+
+.f-orelega {
+  font-family: 'Orelega One', cursive;
+}
+
+.f-play {
+  font-family: 'Playfair Display', serif;
+}
+
+.f-roboto {
+  font-family: 'Roboto Slab', serif;
+}
+
+.f-anton {
+  font-family: 'Anton', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -32,6 +50,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
