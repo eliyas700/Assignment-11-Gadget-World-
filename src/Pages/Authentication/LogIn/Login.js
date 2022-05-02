@@ -2,9 +2,23 @@ import React from "react";
 import { GrMail } from "react-icons/gr";
 import { FiLock } from "react-icons/fi";
 import Sociallogin from "../SocialLogin/Sociallogin";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
 const Login = () => {
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const navigate = useNavigate();
+  if (user) {
+    navigate("/");
+  }
+  const handleLogin = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.pass.value;
+    signInWithEmailAndPassword(email, password);
+  };
   return (
     <section className="signup">
       <PageTitle title="Log In "></PageTitle>
@@ -12,7 +26,11 @@ const Login = () => {
         <div className="signup-content row justify-content-between">
           <div className="m-0 col-12 col-lg-6">
             <h2 className=" py-3">Log In</h2>
-            <form className="register-form w-75 mx-auto" id="register-form">
+            <form
+              onSubmit={handleLogin}
+              className="register-form w-75 mx-auto"
+              id="register-form"
+            >
               <div className="form-group aliign d-flex">
                 <label for="email">
                   <GrMail />
