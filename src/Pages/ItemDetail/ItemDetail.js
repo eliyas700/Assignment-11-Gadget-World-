@@ -8,6 +8,7 @@ const ItemDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const { title, img, description, price, quantity, brand, sale } = product;
+  const [error, setError] = useState("");
   useEffect(() => {
     const url = `http://localhost:5000/items/${id}`;
     fetch(url)
@@ -15,7 +16,7 @@ const ItemDetail = () => {
       .then((data) => {
         setProduct(data);
       });
-  }, [quantity]);
+  }, [product]);
   const handleDelivered = (event) => {
     event.preventDefault();
     const newQuantity = parseInt(quantity) - 1;
@@ -37,10 +38,38 @@ const ItemDetail = () => {
       .then((data) => console.log("Success", data));
     alert("information Added Successfully");
   };
+  const handleRestock = (event) => {
+    event.preventDefault();
+    const restock = event.target.restock.value;
+    console.log(restock);
+    if (restock > 0) {
+      console.log("i am here");
+      const newQuantity = parseInt(quantity) + parseInt(restock);
+      const newSale = parseInt(sale) + 0;
+      console.log(newQuantity, newSale);
+      const Quantity = newQuantity;
+      const Sale = newSale;
+      const user = { Quantity, Sale };
+      //Send Data to the Server Site
+      const url = `http://localhost:5000/items/${id}`;
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      })
+        .then((res) => res.json())
+        .then((data) => console.log("Success", data));
+      alert("information Added Successfully");
+      event.target.reset();
+    } else {
+      setError("You Should Export a Positive Number");
+    }
+  };
   return (
     <div>
-      <h3>This is from Item Detail:{product.title}</h3>
-      <div className="cards ">
+      <div className="cards mt-2">
         <div className="card-area">
           <div className="card__title  ">
             <Link
@@ -83,8 +112,29 @@ const ItemDetail = () => {
             <p>Supplied by</p>
             <h3>{brand}</h3>
           </div>
-          <div className="action">
-            <button onClick={handleDelivered} type="button">
+          <div>
+            <form onSubmit={handleRestock}>
+              <label htmlFor="restock">
+                Restock <span className="fw-bold">{title}</span>
+              </label>
+              <input
+                type="number"
+                className="w-25"
+                name="restock"
+                id="restock"
+              />
+              <button className="item-btn-2 ms-2" type="submit">
+                Restock
+              </button>
+            </form>
+            <p className="text-danger">{error}</p>
+          </div>
+          <div>
+            <button
+              className="item-btn-2"
+              onClick={handleDelivered}
+              type="button"
+            >
               Delivered
             </button>
           </div>

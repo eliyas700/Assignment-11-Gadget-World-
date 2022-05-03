@@ -115,32 +115,18 @@
     color: #a1cc16;
 }
 
-.cards .card__body .reviews .stars {
-    display: inline-block;
-    list-style: none;
-    padding: 0;
-}
 
-.cards .card__body .reviews .stars>li {
-    display: inline-block;
-}
 
-.cards .card__body .reviews .stars>li .fa {
-    color: #f7c01b;
-}
 
-.cards .card__body .reviews>span {
-    font-family: "Open Sans", sans-serif;
-    font-size: 14px;
-    margin-left: 5px;
-    color: #555;
-}
+
+
+
 
 .cards .card__footer {
     padding: 30px 40px;
     display: flex;
     flex-flow: row no-wrap;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
 }
 
@@ -178,7 +164,7 @@
     color: #115dd8;
 }
 
-.cards .card__footer .action button {
+.item-btn-2 {
     cursor: pointer;
     border: 1px solid #115dd8;
     padding: 14px 30px;
@@ -190,7 +176,7 @@
     transition: 200ms;
 }
 
-.cards .card__footer .action button:hover {
+.item-btn-2:hover {
     background: #fff;
     color: #115dd8;
 }

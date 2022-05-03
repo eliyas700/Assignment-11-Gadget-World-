@@ -12,6 +12,7 @@ import Allitems from "./Pages/Allitems/Allitems";
 import NotFound from "./Pages/Shared/404/NotFound";
 import ItemDetail from "./Pages/ItemDetail/ItemDetail";
 import RequireAuth from "./Pages/Authentication/RequireAuth/RequireAuth";
+import ManageItems from "./Pages/ManageItems/ManageItems";
 function App() {
   return (
     <div className="App">
@@ -29,6 +30,10 @@ function App() {
               <ItemDetail></ItemDetail>
             </RequireAuth>
           }
+        ></Route>
+        <Route
+          path="/manageitems"
+          element={<ManageItems></ManageItems>}
         ></Route>
         <Route path="/*" element={<NotFound></NotFound>}></Route>
       </Routes>
