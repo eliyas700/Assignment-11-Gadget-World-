@@ -13,6 +13,7 @@ import NotFound from "./Pages/Shared/404/NotFound";
 import ItemDetail from "./Pages/ItemDetail/ItemDetail";
 import RequireAuth from "./Pages/Authentication/RequireAuth/RequireAuth";
 import ManageItems from "./Pages/ManageItems/ManageItems";
+import Additems from "./Pages/Additems/Additems";
 function App() {
   return (
     <div className="App">
@@ -33,7 +34,19 @@ function App() {
         ></Route>
         <Route
           path="/manageitems"
-          element={<ManageItems></ManageItems>}
+          element={
+            <RequireAuth>
+              <ManageItems></ManageItems>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/additems"
+          element={
+            <RequireAuth>
+              <Additems></Additems>
+            </RequireAuth>
+          }
         ></Route>
         <Route path="/*" element={<NotFound></NotFound>}></Route>
       </Routes>

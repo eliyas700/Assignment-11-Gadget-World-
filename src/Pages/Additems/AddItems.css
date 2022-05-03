@@ -1,0 +1,20 @@
+.add-product {
+    border: 2px solid #666;
+    padding: 40px;
+    margin: 20px auto;
+    text-align: left;
+    border-radius: 10px;
+    width: 40%;
+    box-shadow: 10px 10px 30px #3e3e3e;
+    transition: .5s ease-in-out;
+}
+
+.add-product:hover {
+    box-shadow: none;
+}
+
+
+.add-product input {
+    margin: 10px auto;
+    width: 100%;
+}
