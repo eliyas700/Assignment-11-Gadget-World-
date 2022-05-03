@@ -18,9 +18,9 @@ const Sociallogin = () => {
   return (
     <div>
       <p>{errorMsg}</p>
-      <div class="d-flex justify-content-center my-4">
-        <p class="social-label">Or login with</p>
-        <ul class="socials d-flex ">
+      <div className="d-flex justify-content-center my-4">
+        <p className="social-label">Or login with</p>
+        <ul className="socials d-flex ">
           <li>
             <FaFacebookSquare color="#4867AA" size={30} />
           </li>

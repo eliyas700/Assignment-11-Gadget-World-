@@ -1,9 +1,17 @@
+import { signOut } from "firebase/auth";
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import auth from "../../../firebase.init";
 import PageTitle from "../PageTitle/PageTitle";
 import "./Header.css";
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
+  console.log(user);
+  const handleSignOut = () => {
+    signOut(auth);
+  };
   return (
     <>
       <PageTitle title="Home"></PageTitle>
@@ -38,9 +46,39 @@ const Header = () => {
               </Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link as={Link} to="/login">
-                Log In
-              </Nav.Link>
+              {user ? (
+                <>
+                  <Nav.Link>Manage Items</Nav.Link>
+                  <Nav.Link>Add Items</Nav.Link>
+                  <Nav.Link>My Items</Nav.Link>
+                  <Nav.Link as={Link} to="/login">
+                    <button
+                      style={{
+                        background: "transparent",
+                        border: "none",
+                        color: "white",
+                      }}
+                      onClick={handleSignOut}
+                    >
+                      <small style={{ textTransform: "none" }}>
+                        <img
+                          title={user?.email}
+                          height={28}
+                          className="rounded-circle mx-2"
+                          src={user?.photoURL}
+                          alt={user?.displayName}
+                          srcSet=""
+                        />
+                      </small>
+                      Sign Out
+                    </button>
+                  </Nav.Link>
+                </>
+              ) : (
+                <Nav.Link as={Link} to="/login">
+                  Log In
+                </Nav.Link>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -9,16 +9,16 @@ const Team = () => {
         Our Team Members
       </h2>
       <div className=" mb-3 team-container row justify-content-center">
-        <div class="card mx-2 col-12 col-lg-4">
-          <div class="face face1">
-            <div class="content">
-              <div class="icon">
+        <div className="card mx-2 col-12 col-lg-4">
+          <div className="face face1">
+            <div className="content">
+              <div className="icon">
                 <img src="https://i.ibb.co/wJ9kxpM/images-6.jpg" alt="" />
               </div>
             </div>
           </div>
-          <div class="face face2">
-            <div class="content">
+          <div className="face face2">
+            <div className="content">
               <h3>Adam Milne</h3>
               <p>
                 <small className="text-muted">Senior Sell Manager</small>
@@ -48,16 +48,16 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <div class="card mx-2 p-0 col-12 col-lg-4">
-          <div class="face face1">
-            <div class="content">
-              <div class="icon">
+        <div className="card mx-2 p-0 col-12 col-lg-4">
+          <div className="face face1">
+            <div className="content">
+              <div className="icon">
                 <img src="https://i.ibb.co/nnqnqT0/images-5.jpg" alt="" />
               </div>
             </div>
           </div>
-          <div class="face face2">
-            <div class="content">
+          <div className="face face2">
+            <div className="content">
               <h3>Bill Gates</h3>
               <p>
                 <small className="text-muted">Head Manager</small>
@@ -87,16 +87,16 @@ const Team = () => {
             </div>
           </div>
         </div>
-        <div class="card mx-2 p-0 col-12 col-lg-4">
-          <div class="face face1">
-            <div class="content">
-              <div class="icon">
+        <div className="card mx-2 p-0 col-12 col-lg-4">
+          <div className="face face1">
+            <div className="content">
+              <div className="icon">
                 <img src="https://i.ibb.co/RvFHkxV/images-7.jpg" alt="" />
               </div>
             </div>
           </div>
-          <div class="face face2">
-            <div class="content">
+          <div className="face face2">
+            <div className="content">
               <h3>Calude Fergueson</h3>
               <p>
                 <small className="text-muted">Sales Manager</small>

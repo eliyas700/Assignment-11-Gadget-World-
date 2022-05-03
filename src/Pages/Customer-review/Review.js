@@ -7,16 +7,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Review = ({ review }) => {
   const { name, img, comment, rating } = review;
   return (
-    <div class="rev-section col-12 col-lg-4">
-      <div class="reviews">
-        <div class="review">
-          <div class="head-review">
+    <div className="rev-section col-12 col-lg-4">
+      <div className="reviews">
+        <div className="review">
+          <div className="head-review">
             <img src={img} width="250px" />
           </div>
-          <div class="body-review">
-            <div class="name-review">{name}</div>
-            <div class="place-review">USA</div>
-            <div class="rating">
+          <div className="body-review">
+            <div className="name-review">{name}</div>
+            <div className="place-review">USA</div>
+            <div className="rating">
               <Rating
                 initialRating={rating}
                 emptySymbol={<FontAwesomeIcon icon={faStar} />}
@@ -29,7 +29,7 @@ const Review = ({ review }) => {
                 readonly
               ></Rating>
             </div>
-            <div class="desc-review">{comment.slice(0, 150) + "..."}.</div>
+            <div className="desc-review">{comment.slice(0, 150) + "..."}.</div>
           </div>
         </div>
       </div>
