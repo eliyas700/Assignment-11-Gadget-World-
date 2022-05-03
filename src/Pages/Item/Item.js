@@ -37,7 +37,10 @@ const Item = ({ item }) => {
               Sold: <span className="text-danger">{sale}</span>
             </p>
           </div>
-          <button onClick={() => handleProductUpdate(_id)} className="px-4 ">
+          <button
+            onClick={() => handleProductUpdate(_id)}
+            className="px-4 item-btn "
+          >
             Update
           </button>
         </div>

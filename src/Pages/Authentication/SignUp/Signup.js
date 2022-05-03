@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useNavigate, useLocation } from "react";
 import { FaUserAlt, FaLock } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 import { FiLock } from "react-icons/fi";
@@ -11,15 +11,17 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
-import { async } from "@firebase/util";
 const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [errorMsg, setErrorMsg] = useState("");
   const [updateProfile, updating, upadeProfileError] = useUpdateProfile(auth);
+  const navigate = useNavigate();
   const [checked, setChecked] = useState(false);
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   if (user) {
-    alert("User Created");
+    navigate(from, { replace: true });
   }
 
   const handleSubmit = async (event) => {

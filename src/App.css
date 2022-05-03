@@ -16,23 +16,7 @@
   font-family: 'Anton', sans-serif;
 }
 
-.item-btn {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-image: linear-gradient(to left, #21a2fd 0%, #7967fe 100%);
-  border: none;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 5px 5px 10px #666;
-}
 
-.item-btn:hover {
-  color: #dcdde1;
-  transition: .5s;
-  box-shadow: none;
-  cursor: pointer;
-}
 
 .App {
   text-align: center;

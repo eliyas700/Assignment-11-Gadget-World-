@@ -11,6 +11,7 @@ import Item from "./Pages/Item/Item";
 import Allitems from "./Pages/Allitems/Allitems";
 import NotFound from "./Pages/Shared/404/NotFound";
 import ItemDetail from "./Pages/ItemDetail/ItemDetail";
+import RequireAuth from "./Pages/Authentication/RequireAuth/RequireAuth";
 function App() {
   return (
     <div className="App">
@@ -21,7 +22,14 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/review" element={<Reviews></Reviews>}></Route>
         <Route path="/item" element={<Allitems></Allitems>}></Route>
-        <Route path="/item/:id" element={<ItemDetail></ItemDetail>}></Route>
+        <Route
+          path="/item/:id"
+          element={
+            <RequireAuth>
+              <ItemDetail></ItemDetail>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

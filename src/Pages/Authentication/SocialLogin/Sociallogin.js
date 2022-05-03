@@ -3,13 +3,14 @@ import { FaFacebookSquare, FaGithub } from "react-icons/fa";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { FcGoogle } from "react-icons/fc";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 const Sociallogin = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   if (user) {
-    navigate("/");
-    alert("Log in");
+    navigate(from, { replace: true });
   }
   let errorMsg;
   if (error) {
