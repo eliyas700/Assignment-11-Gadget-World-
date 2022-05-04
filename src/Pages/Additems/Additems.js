@@ -1,7 +1,27 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import PageTitle from "../Shared/PageTitle/PageTitle";
+import { useForm } from "react-hook-form";
+import auth from "../../firebase.init";
 import "./AddItems.css";
 const Additems = () => {
+  const [user] = useAuthState(auth);
+  const { register, handleSubmit } = useForm();
+
+  const onSubmit = (data, event) => {
+    console.log(data);
+    const url = `http://localhost:5000/items`;
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => console.log(result));
+    event.target.reset();
+  };
   return (
     <div>
       <PageTitle title="Add Items"></PageTitle>
@@ -15,54 +35,54 @@ const Additems = () => {
           src="https://i.ibb.co/GsB0jkt/logo.png"
           alt=""
         />
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <input
             type="text"
             placeholder="Product Name"
-            required
-            id="name"
-            name="name"
+            {...register("title", { required: true })}
           />
-
+          <input
+            type="text"
+            placeholder="User"
+            value={user?.email}
+            {...register("user", { required: true })}
+          />
           <input
             type="number"
             placeholder="Product Price"
-            required
-            id="price"
-            name="price"
+            {...register("price", { required: true })}
           />
-
           <input
             type="number"
             placeholder="Product Quantity"
-            required
-            id="quantity"
-            name="quantity"
+            {...register("quantity", { required: true })}
+          />
+          <input
+            type="number"
+            value="0"
+            placeholder="Product Sale"
+            {...register("sale", { required: true })}
           />
 
           <input
             type="text"
-            placeholder="Product Seller"
-            required
-            id="seller"
-            name="seller"
+            placeholder="Product Manufacturer"
+            {...register("brand", { required: true })}
           />
-
           <input
             type="text"
-            placeholder="Product photo URL"
-            required
-            id="photo"
-            name="photo"
+            placeholder="Product Photo URL"
+            {...register("img", { required: true })}
           />
           <textarea
-            name="description"
-            placeholder="Product Description"
-            id=""
-            cols="55"
+            className="mb-2"
+            placeholder="Description"
+            cols="62"
             rows="5"
-          ></textarea>
-          <input className="item-btn" type="submit" value="Add Now" />
+            {...register("description", { required: true })}
+          />
+
+          <input type="submit" value="Add Now" />
         </form>
       </div>
     </div>
