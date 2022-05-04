@@ -7,7 +7,6 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import Signup from "./Pages/Authentication/SignUp/Signup";
 import Login from "./Pages/Authentication/LogIn/Login";
 import Reviews from "./Pages/Customer-review/Reviews";
-import Item from "./Pages/Item/Item";
 import Allitems from "./Pages/Allitems/Allitems";
 import NotFound from "./Pages/Shared/404/NotFound";
 import ItemDetail from "./Pages/ItemDetail/ItemDetail";
@@ -15,6 +14,7 @@ import RequireAuth from "./Pages/Authentication/RequireAuth/RequireAuth";
 import ManageItems from "./Pages/ManageItems/ManageItems";
 import Additems from "./Pages/Additems/Additems";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <div className="App">

@@ -1,25 +1,40 @@
-import React from "react";
+import React, { useRef } from "react";
 import { GrMail } from "react-icons/gr";
 import { FiLock } from "react-icons/fi";
 import Sociallogin from "../SocialLogin/Sociallogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
+import { toast } from "react-toastify";
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const navigate = useNavigate();
   const location = useLocation();
+  const [sendPasswordResetEmail, sending, Reseterror] =
+    useSendPasswordResetEmail(auth);
   let from = location.state?.from?.pathname || "/";
+  const emailRef = useRef("");
+  if (loading) {
+    return <Spinner></Spinner>;
+  }
   if (user) {
     navigate(from, { replace: true });
   }
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.pass.value;
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+  };
+  const resetPassword = async () => {
+    const email = emailRef.current.value;
+    email ? toast("Check Your Email to Reset") : toast("Sorry!Type Your Email");
+    await sendPasswordResetEmail(email);
   };
   return (
     <section className="signup">
@@ -39,6 +54,7 @@ const Login = () => {
                 </label>
                 <input
                   type="email"
+                  ref={emailRef}
                   name="email"
                   id="email"
                   placeholder="Your Email"
@@ -58,7 +74,9 @@ const Login = () => {
 
               <p>
                 Forget Password ?{" "}
-                <button className="btn btn-link">Reset Password</button>
+                <button onClick={resetPassword} className="btn btn-link">
+                  Reset Password
+                </button>
               </p>
               <div className="form-group form-button">
                 <input
