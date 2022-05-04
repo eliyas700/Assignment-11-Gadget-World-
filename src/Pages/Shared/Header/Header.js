@@ -8,7 +8,6 @@ import PageTitle from "../PageTitle/PageTitle";
 import "./Header.css";
 const Header = () => {
   const [user, loading, error] = useAuthState(auth);
-  console.log(user);
   const handleSignOut = () => {
     signOut(auth);
   };

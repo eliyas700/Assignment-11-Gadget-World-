@@ -15,7 +15,7 @@ const Reviews = () => {
       </h2>
       <div className="row justify-content-around align-item-center">
         {reviews.map((review) => (
-          <Review key={review.id} review={review}></Review>
+          <Review key={review._id} review={review}></Review>
         ))}
       </div>
     </div>

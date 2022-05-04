@@ -34,7 +34,7 @@ const Login = () => {
               id="register-form"
             >
               <div className="form-group aliign d-flex">
-                <label for="email">
+                <label htmlFor="email">
                   <GrMail />
                 </label>
                 <input
@@ -45,7 +45,7 @@ const Login = () => {
                 />
               </div>
               <div className="form-group d-flex align-items-center">
-                <label for="pass">
+                <label htmlFor="pass">
                   <FiLock />
                 </label>
                 <input

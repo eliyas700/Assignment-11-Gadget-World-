@@ -1,10 +1,10 @@
-import React, { useState, useNavigate, useLocation } from "react";
+import React, { useState } from "react";
 import { FaUserAlt, FaLock } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 import { FiLock } from "react-icons/fi";
 import "./SignUp.css";
 import Sociallogin from "../SocialLogin/Sociallogin";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
 import {
   useCreateUserWithEmailAndPassword,
@@ -15,7 +15,7 @@ const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
   const [errorMsg, setErrorMsg] = useState("");
-  const [updateProfile, updating, upadeProfileError] = useUpdateProfile(auth);
+  const [updateProfile] = useUpdateProfile(auth);
   const navigate = useNavigate();
   const [checked, setChecked] = useState(false);
   const location = useLocation();
@@ -53,7 +53,7 @@ const Signup = () => {
               id="register-form"
             >
               <div className="form-group d-flex align-items-center">
-                <label className="me-2 " for="name">
+                <label className="me-2 " htmlFor="name">
                   <FaUserAlt />
                 </label>
                 <input
@@ -65,7 +65,7 @@ const Signup = () => {
                 />
               </div>
               <div className="form-group aliign d-flex">
-                <label for="email">
+                <label htmlFor="email">
                   <GrMail />
                 </label>
                 <input
@@ -77,7 +77,7 @@ const Signup = () => {
                 />
               </div>
               <div className="form-group d-flex align-items-center">
-                <label for="pass">
+                <label htmlFor="pass">
                   <FiLock />
                 </label>
                 <input
@@ -89,7 +89,7 @@ const Signup = () => {
                 />
               </div>
               <div className="form-group d-flex align-items-center">
-                <label for="re-pass">
+                <label htmlFor="re-pass">
                   <FaLock />
                 </label>
                 <input
@@ -110,7 +110,7 @@ const Signup = () => {
                   />
                   <label
                     className={!checked ? "text-danger" : "text-success"}
-                    for="gridCheck"
+                    htmlFor="gridCheck"
                   >
                     I accept the terms and Conditions of <b>Gadget-World</b>
                   </label>

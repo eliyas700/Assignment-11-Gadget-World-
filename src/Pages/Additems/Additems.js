@@ -4,6 +4,7 @@ import PageTitle from "../Shared/PageTitle/PageTitle";
 import { useForm } from "react-hook-form";
 import auth from "../../firebase.init";
 import "./AddItems.css";
+import { toast } from "react-toastify";
 const Additems = () => {
   const [user] = useAuthState(auth);
   const { register, handleSubmit } = useForm();
@@ -20,6 +21,7 @@ const Additems = () => {
     })
       .then((res) => res.json())
       .then((result) => console.log(result));
+    toast("New Item Added Successfully");
     event.target.reset();
   };
   return (
