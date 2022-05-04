@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Table } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 import useItems from "../../Hooks/useItems";
 import PageTitle from "../Shared/PageTitle/PageTitle";
 
-const ManageItems = () => {
+const MyItems = () => {
+  const [user] = useAuthState(auth);
   const [items, setItems] = useItems([]);
-  console.log(items);
+  const myItems = items.filter((item) => item.user === user.email);
   const navigate = useNavigate();
   const handleProductUpdate = (id) => {
     navigate(`/item/${id}`);
@@ -20,7 +23,7 @@ const ManageItems = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          const remaining = items.filter((item) => item._id !== id);
+          const remaining = myItems.filter((item) => item._id !== id);
           setItems(remaining);
         });
     }
@@ -28,9 +31,9 @@ const ManageItems = () => {
 
   return (
     <div>
-      <PageTitle title="Manage Item"></PageTitle>
+      <PageTitle title="My Item"></PageTitle>
       <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
-        Manage Items
+        My Items
       </h2>
       <Table striped bordered hover>
         <thead>
@@ -46,7 +49,7 @@ const ManageItems = () => {
           </tr>
         </thead>
         <tbody>
-          {items.map((item) => (
+          {myItems.map((item) => (
             <tr key={item._id}>
               <td>
                 <img
@@ -95,4 +98,4 @@ const ManageItems = () => {
   );
 };
 
-export default ManageItems;
+export default MyItems;

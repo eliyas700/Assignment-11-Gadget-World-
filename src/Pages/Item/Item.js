@@ -14,7 +14,7 @@ const Item = ({ item }) => {
           <img width={120} height={260} src={img} alt="" />
         </div>
         <div className="title f-orelega my-2">
-          <h1>{title}</h1>
+          <h1 title={title}>{title.slice(0, 25) + "..."}</h1>
         </div>
         <h5 className="fw-bold"> $ {price}</h5>
         <div className="des">

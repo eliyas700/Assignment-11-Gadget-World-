@@ -112,8 +112,9 @@ const Footer = () => {
         </div>
       </div>
       <p className="py-2">
-        Copyright © {year} <span className="fw-bold">Gadget-World</span>. All
-        rights reserved.
+        Copyright © {year}{" "}
+        <span className="fw-bold text-primary">Gadget-World</span>. All rights
+        reserved.
       </p>
     </div>
   );
