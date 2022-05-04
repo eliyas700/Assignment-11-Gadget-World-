@@ -84,7 +84,7 @@ const Additems = () => {
             {...register("description", { required: true })}
           />
 
-          <input type="submit" value="Add Now" />
+          <input type="submit" className="item-btn" value="Add Now" />
         </form>
       </div>
     </div>
