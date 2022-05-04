@@ -1,12 +1,31 @@
 import React from "react";
 import { Table } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useItems from "../../Hooks/useItems";
 import PageTitle from "../Shared/PageTitle/PageTitle";
-import ItemManage from "./ItemManage";
 
 const ManageItems = () => {
   const [items, setItems] = useItems([]);
+  const navigate = useNavigate();
+  const handleProductUpdate = (id) => {
+    navigate(`/item/${id}`);
+  };
+  const handleDelete = (id) => {
+    const proceed = window.confirm("Are You Sure?");
+    if (proceed) {
+      const url = `http://localhost:5000/items/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const remaining = items.filter((item) => item._id !== id);
+          setItems(remaining);
+        });
+    }
+  };
+
   return (
     <div>
       <PageTitle title="Manage Item"></PageTitle>
@@ -28,7 +47,40 @@ const ManageItems = () => {
         </thead>
         <tbody>
           {items.map((item) => (
-            <ItemManage key={item._id} item={item}></ItemManage>
+            <tr key={item._id}>
+              <td>
+                <img
+                  className="border border-3"
+                  style={{ borderRadius: "50%" }}
+                  height={40}
+                  width={40}
+                  src={item.img}
+                  alt=""
+                />
+              </td>
+              <td>{item.title}</td>
+              <td>{item.price}</td>
+              <td>{item.quantity}</td>
+              <td>{item.sale}</td>
+              <td>{item.brand}</td>
+              <td>{item.user}</td>
+              <td>
+                <div className="d-flex">
+                  <button
+                    className="btn-primary me-2"
+                    onClick={() => handleProductUpdate(item._id)}
+                  >
+                    Details
+                  </button>
+                  <button
+                    onClick={() => handleDelete(item._id)}
+                    className="btn-danger "
+                  >
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
           ))}
         </tbody>
       </Table>
