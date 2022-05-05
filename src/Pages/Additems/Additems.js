@@ -11,7 +11,7 @@ const Additems = () => {
 
   const onSubmit = (data, event) => {
     console.log(data);
-    const url = `http://localhost:5000/items`;
+    const url = `https://infinite-ridge-60614.herokuapp.com/items`;
     fetch(url, {
       method: "POST",
       headers: {

@@ -17,7 +17,7 @@ const MyItems = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You Sure?");
     if (proceed) {
-      const url = `http://localhost:5000/items/${id}`;
+      const url = `https://infinite-ridge-60614.herokuapp.com/items/${id}`;
       fetch(url, {
         method: "DELETE",
       })
