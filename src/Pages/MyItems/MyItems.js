@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
-import useItems from "../../Hooks/useItems";
 import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const MyItems = () => {
-  const [user] = useAuthState(auth);
-  const [items, setItems] = useItems([]);
-  const myItems = items.filter((item) => item.user === user.email);
   const navigate = useNavigate();
+  const [user] = useAuthState(auth);
+  const [items, setItems] = useState([]);
+  // const myItems = items.filter((item) => item.user === user.email);
+  useEffect(() => {
+    const getMyItems = async () => {
+      const email = user.email;
+      const url = `http://localhost:5000/myitem?user=${email}`;
+      const { data } = await axios.get(url);
+      console.log(data);
+      setItems(data);
+    };
+    getMyItems();
+  }, [user]);
+
   const handleProductUpdate = (id) => {
     navigate(`/item/${id}`);
   };
@@ -23,8 +34,8 @@ const MyItems = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          const remaining = myItems.filter((item) => item._id !== id);
-          setItems(remaining);
+          // const remaining = items.filter((item) => item._id !== id);
+          // setItems(remaining);
         });
     }
   };
@@ -33,7 +44,7 @@ const MyItems = () => {
     <div>
       <PageTitle title="My Item"></PageTitle>
       <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
-        My Items
+        My Items:{items.length}
       </h2>
       <Table striped bordered hover>
         <thead>
@@ -49,7 +60,7 @@ const MyItems = () => {
           </tr>
         </thead>
         <tbody>
-          {myItems.map((item) => (
+          {items.map((item) => (
             <tr key={item._id}>
               <td>
                 <img
