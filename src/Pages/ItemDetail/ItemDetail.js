@@ -104,6 +104,12 @@ const ItemDetail = () => {
                 <BsCartDashFill />
                 Total Sell: {sale}
               </p>
+              <Link
+                className="item-btn text-decoration-none my-4 d-inline-block"
+                to="/manageitems"
+              >
+                Manage Item
+              </Link>
             </div>
           </div>
         </div>

@@ -16,6 +16,7 @@ import Additems from "./Pages/Additems/Additems";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MyItems from "./Pages/MyItems/MyItems";
+import MyBlog from "./Pages/MyBlog/MyBlog";
 function App() {
   return (
     <div className="App">
@@ -59,6 +60,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="/blog" element={<MyBlog></MyBlog>}></Route>
         <Route path="/*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

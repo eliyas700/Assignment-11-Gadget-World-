@@ -16,8 +16,15 @@ const Items = () => {
         ))}
       </div>
       <Link
+        to="/manageitems"
+        className="item-btn d-inline-block text-decoration-none my-5"
+      >
+        Manage Inventories
+      </Link>
+      <Link
         to="/item"
-        className="item-btn text-decoration-none d-inline-block my-4"
+        style={{ textAlign: "right" }}
+        className="btn  btn-link fs-4 text-decoration-none d-block my-4 ms-auto"
       >
         See More Products <AiOutlineDoubleRight />
       </Link>

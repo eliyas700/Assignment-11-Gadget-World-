@@ -27,7 +27,7 @@ const ManageItems = () => {
   };
 
   return (
-    <div>
+    <div style={{ width: "100vw" }}>
       <PageTitle title="Manage Item"></PageTitle>
       <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
         Manage Items
