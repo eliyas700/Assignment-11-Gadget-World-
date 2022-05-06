@@ -5,7 +5,11 @@ import { MdProductionQuantityLimits } from "react-icons/md";
 import { BsCartDashFill } from "react-icons/bs";
 import "./ItemDetail.css";
 import { toast } from "react-toastify";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 const ItemDetail = () => {
+  const [user] = useAuthState(auth);
+  const { emailVerified } = user;
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const { title, img, description, price, quantity, brand, sale } = product;
@@ -20,33 +24,9 @@ const ItemDetail = () => {
   }, [product]);
   const handleDelivered = (event) => {
     event.preventDefault();
-    const newQuantity = parseInt(quantity) - 1;
-    const newSale = parseInt(sale) + 1;
-    console.log(newQuantity, newSale);
-    const Quantity = newQuantity;
-    const Sale = newSale;
-    const user = { Quantity, Sale };
-    //Send Data to the Server Site
-    const url = `https://infinite-ridge-60614.herokuapp.com/items/${id}`;
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log("Success", data));
-    toast("Delivered Successfully");
-  };
-  const handleRestock = (event) => {
-    event.preventDefault();
-    const restock = event.target.restock.value;
-    console.log(restock);
-    if (restock > 0) {
-      console.log("i am here");
-      const newQuantity = parseInt(quantity) + parseInt(restock);
-      const newSale = parseInt(sale) + 0;
+    if (emailVerified) {
+      const newQuantity = parseInt(quantity) - 1;
+      const newSale = parseInt(sale) + 1;
       console.log(newQuantity, newSale);
       const Quantity = newQuantity;
       const Sale = newSale;
@@ -62,8 +42,38 @@ const ItemDetail = () => {
       })
         .then((res) => res.json())
         .then((data) => console.log("Success", data));
-      toast(`${title} Stocked Successfully!`);
-      event.target.reset();
+      toast("Delivered Successfully");
+    } else {
+      toast("You Need to Verify Your Email");
+    }
+  };
+  const handleRestock = (event) => {
+    event.preventDefault();
+    const restock = event.target.restock.value;
+    if (restock > 0) {
+      if (emailVerified) {
+        const newQuantity = parseInt(quantity) + parseInt(restock);
+        const newSale = parseInt(sale) + 0;
+        console.log(newQuantity, newSale);
+        const Quantity = newQuantity;
+        const Sale = newSale;
+        const user = { Quantity, Sale };
+        //Send Data to the Server Site
+        const url = `https://infinite-ridge-60614.herokuapp.com/items/${id}`;
+        fetch(url, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        })
+          .then((res) => res.json())
+          .then((data) => console.log("Success", data));
+        toast(`${title} Stocked Successfully!`);
+        event.target.reset();
+      } else {
+        toast("Please Verify Your Email to Restock");
+      }
     } else {
       setError("You Should Export a Positive Number");
     }

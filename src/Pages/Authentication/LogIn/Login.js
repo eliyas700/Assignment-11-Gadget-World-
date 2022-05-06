@@ -4,7 +4,6 @@ import { FiLock } from "react-icons/fi";
 import Sociallogin from "../SocialLogin/Sociallogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
-import axios from "axios";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -24,20 +23,21 @@ const Login = () => {
   if (loading) {
     return <Spinner></Spinner>;
   }
+
+  let errorMessage;
+  if (error) {
+    errorMessage = <p>{error.message}</p>;
+  }
   if (user) {
     navigate(from, { replace: true });
   }
   const handleLogin = async (event) => {
     event.preventDefault();
+    // event.stopPropagation();
     const email = event.target.email.value;
     const password = event.target.pass.value;
     await signInWithEmailAndPassword(email, password);
-    // const { data } = await axios.post(
-    //   "https://infinite-ridge-60614.herokuapp.com/login",
-    //   { email }
-    // );
     const url = "https://infinite-ridge-60614.herokuapp.com/login";
-
     fetch(url, {
       method: "POST",
       body: JSON.stringify({
@@ -49,13 +49,10 @@ const Login = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         localStorage.setItem("accessToken", data.accessToken);
         navigate(from, { replace: true });
+        event.target.reset();
       });
-    // console.log(data);
-    // localStorage.setItem("accessToken", data.accessToken);
-    // navigate(from, { replace: true });
   };
   const resetPassword = async () => {
     const email = emailRef.current.value;
@@ -113,6 +110,7 @@ const Login = () => {
                   value="Log In"
                 />
               </div>
+              <p className="text-danger">{errorMessage}</p>
             </form>
             <p>
               New at Gadget World?{" "}
