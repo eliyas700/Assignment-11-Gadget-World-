@@ -9,13 +9,19 @@ import PageTitle from "../Shared/PageTitle/PageTitle";
 const MyItems = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
+  console.log(user);
   const [items, setItems] = useState([]);
+  console.log(items);
   // const myItems = items.filter((item) => item.user === user.email);
   useEffect(() => {
     const getMyItems = async () => {
       const email = user.email;
       const url = `http://localhost:5000/myitem?user=${email}`;
-      const { data } = await axios.get(url);
+      const { data } = await axios.get(url, {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+      });
       console.log(data);
       setItems(data);
     };
@@ -34,8 +40,8 @@ const MyItems = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          // const remaining = items.filter((item) => item._id !== id);
-          // setItems(remaining);
+          const remaining = items.filter((item) => item._id !== id);
+          setItems(remaining);
         });
     }
   };

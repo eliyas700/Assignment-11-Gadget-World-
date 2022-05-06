@@ -4,6 +4,7 @@ import { FiLock } from "react-icons/fi";
 import Sociallogin from "../SocialLogin/Sociallogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import PageTitle from "../../Shared/PageTitle/PageTitle";
+import axios from "axios";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -24,13 +25,17 @@ const Login = () => {
     return <Spinner></Spinner>;
   }
   if (user) {
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
   }
   const handleLogin = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.pass.value;
     await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post("http://localhost:5000/login", { email });
+    console.log(data);
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
   };
   const resetPassword = async () => {
     const email = emailRef.current.value;
