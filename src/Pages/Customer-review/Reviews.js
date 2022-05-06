@@ -13,6 +13,11 @@ const Reviews = () => {
       <h2 style={{ color: "#4834d4" }} className="my-4 fw-bold f-anton ">
         Customer Reviews
       </h2>
+      <img
+        className="w-25"
+        src="https://i.ibb.co/xSJcJVY/SL-111019-24950-13-removebg-preview.png"
+        alt=""
+      />
       <div className="row justify-content-around align-item-center">
         {reviews.map((review) => (
           <Review key={review._id} review={review}></Review>

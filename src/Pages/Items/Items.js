@@ -10,6 +10,11 @@ const Items = () => {
       <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
         Products Available
       </h2>
+      <img
+        className="w-25"
+        src="https://i.ibb.co/xSJcJVY/SL-111019-24950-13-removebg-preview.png"
+        alt=""
+      />
       <div className="row container-fluid mx-auto justify-content-between">
         {items.slice(0, 6).map((item) => (
           <Item key={item._id} item={item}></Item>

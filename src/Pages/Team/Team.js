@@ -8,6 +8,11 @@ const Team = () => {
       <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
         Our Team Members
       </h2>
+      <img
+        className="w-25"
+        src="https://i.ibb.co/xSJcJVY/SL-111019-24950-13-removebg-preview.png"
+        alt=""
+      />
       <div className=" mb-3 team-container row justify-content-center">
         <div className="card mx-2 col-12 col-lg-4">
           <div className="face face1">

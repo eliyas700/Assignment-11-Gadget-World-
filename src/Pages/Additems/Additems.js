@@ -36,6 +36,11 @@ const Additems = () => {
       <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
         Add a Product
       </h2>
+      <img
+        className="w-25"
+        src="https://i.ibb.co/xSJcJVY/SL-111019-24950-13-removebg-preview.png"
+        alt=""
+      />
       {emailVerified ? (
         <div className=" mx-auto add-product">
           <img

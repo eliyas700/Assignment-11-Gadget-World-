@@ -41,6 +41,11 @@ const ManageItems = () => {
       <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
         Manage Items
       </h2>
+      <img
+        className="w-25 mb-3"
+        src="https://i.ibb.co/xSJcJVY/SL-111019-24950-13-removebg-preview.png"
+        alt=""
+      />
       {emailVerified ? (
         <div>
           <Table striped bordered hover>
