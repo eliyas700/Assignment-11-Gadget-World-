@@ -32,10 +32,30 @@ const Login = () => {
     const email = event.target.email.value;
     const password = event.target.pass.value;
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post("http://localhost:5000/login", { email });
-    console.log(data);
-    localStorage.setItem("accessToken", data.accessToken);
-    navigate(from, { replace: true });
+    // const { data } = await axios.post(
+    //   "https://infinite-ridge-60614.herokuapp.com/login",
+    //   { email }
+    // );
+    const url = "https://infinite-ridge-60614.herokuapp.com/login";
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("accessToken", data.accessToken);
+        navigate(from, { replace: true });
+      });
+    // console.log(data);
+    // localStorage.setItem("accessToken", data.accessToken);
+    // navigate(from, { replace: true });
   };
   const resetPassword = async () => {
     const email = emailRef.current.value;

@@ -10,7 +10,7 @@ const ItemDetail = () => {
   const { title, img, description, price, quantity, brand, sale } = product;
   const [error, setError] = useState("");
   useEffect(() => {
-    const url = `http://localhost:5000/items/${id}`;
+    const url = `https://infinite-ridge-60614.herokuapp.com/items/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -26,7 +26,7 @@ const ItemDetail = () => {
     const Sale = newSale;
     const user = { Quantity, Sale };
     //Send Data to the Server Site
-    const url = `http://localhost:5000/items/${id}`;
+    const url = `https://infinite-ridge-60614.herokuapp.com/items/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
@@ -51,7 +51,7 @@ const ItemDetail = () => {
       const Sale = newSale;
       const user = { Quantity, Sale };
       //Send Data to the Server Site
-      const url = `http://localhost:5000/items/${id}`;
+      const url = `https://infinite-ridge-60614.herokuapp.com/items/${id}`;
       fetch(url, {
         method: "PUT",
         headers: {

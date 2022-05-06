@@ -10,7 +10,23 @@ const Sociallogin = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
   if (user) {
-    navigate(from, { replace: true });
+    const url = "https://infinite-ridge-60614.herokuapp.com/login";
+
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify({
+        email: user.email,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        localStorage.setItem("accessToken", data.accessToken);
+        navigate(from, { replace: true });
+      });
   }
   let errorMsg;
   if (error) {
