@@ -25,14 +25,17 @@ const Login = () => {
     return <Spinner></Spinner>;
   }
   if (user) {
-    // navigate(from, { replace: true });
+    navigate(from, { replace: true });
   }
   const handleLogin = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.pass.value;
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post("http://localhost:5000/login", { email });
+    const { data } = await axios.post(
+      " https://infinite-ridge-60614.herokuapp.com/ login",
+      { email }
+    );
     console.log(data);
     localStorage.setItem("accessToken", data.accessToken);
     navigate(from, { replace: true });

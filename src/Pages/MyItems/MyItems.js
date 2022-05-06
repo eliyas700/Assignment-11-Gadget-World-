@@ -12,11 +12,10 @@ const MyItems = () => {
   console.log(user);
   const [items, setItems] = useState([]);
   console.log(items);
-  // const myItems = items.filter((item) => item.user === user.email);
   useEffect(() => {
     const getMyItems = async () => {
       const email = user.email;
-      const url = `http://localhost:5000/myitem?user=${email}`;
+      const url = ` https://infinite-ridge-60614.herokuapp.com/myitem?user=${email}`;
       const { data } = await axios.get(url, {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
