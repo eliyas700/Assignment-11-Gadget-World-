@@ -15,7 +15,7 @@ const MyItems = () => {
   useEffect(() => {
     const getMyItems = async () => {
       const email = user.email;
-      const url = ` https://infinite-ridge-60614.herokuapp.com/myitem?user=${email}`;
+      const url = `http://localhost:5000/myitem?user=${email}`;
       const { data } = await axios.get(url, {
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
@@ -33,7 +33,7 @@ const MyItems = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are You Sure?");
     if (proceed) {
-      const url = `https://infinite-ridge-60614.herokuapp.com/items/${id}`;
+      const url = `http://localhost:5000/items/${id}`;
       fetch(url, {
         method: "DELETE",
       })
