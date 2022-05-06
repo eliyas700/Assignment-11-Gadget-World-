@@ -1,17 +1,23 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
-import { useAuthState } from "react-firebase-hooks/auth";
+import {
+  useAuthState,
+  useSendEmailVerification,
+} from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import PageTitle from "../Shared/PageTitle/PageTitle";
 
 const MyItems = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
-  console.log(user);
+  const { emailVerified } = user;
+  const [sendEmailVerification, sending, verificationerror] =
+    useSendEmailVerification(auth);
   const [items, setItems] = useState([]);
-  console.log(items);
+
   useEffect(() => {
     const getMyItems = async () => {
       const email = user.email;
@@ -21,7 +27,6 @@ const MyItems = () => {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
       });
-      console.log(data);
       setItems(data);
     };
     getMyItems();
@@ -51,65 +56,84 @@ const MyItems = () => {
       <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
         My Items:{items.length}
       </h2>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Photo</th>
-            <th>Title</th>
-            <th>Price $</th>
-            <th>Quantity</th>
-            <th>Sale</th>
-            <th>Brand</th>
-            <th>User</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {items.map((item) => (
-            <tr key={item._id}>
-              <td>
-                <img
-                  className="border border-3"
-                  style={{ borderRadius: "50%" }}
-                  height={40}
-                  width={40}
-                  src={item.img}
-                  alt=""
-                />
-              </td>
-              <td>{item.title}</td>
-              <td>{item.price}</td>
-              <td>{item.quantity}</td>
-              <td>{item.sale}</td>
-              <td>{item.brand}</td>
-              <td>{item.user}</td>
-              <td>
-                <div className="d-flex">
-                  <button
-                    className="btn-primary me-2"
-                    onClick={() => handleProductUpdate(item._id)}
-                  >
-                    Details
-                  </button>
-                  <button
-                    onClick={() => handleDelete(item._id)}
-                    className="btn-danger "
-                  >
-                    Delete
-                  </button>
-                </div>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
+      {emailVerified ? (
+        <div>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Photo</th>
+                <th>Title</th>
+                <th>Price $</th>
+                <th>Quantity</th>
+                <th>Sale</th>
+                <th>Brand</th>
+                <th>User</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {items.map((item) => (
+                <tr key={item._id}>
+                  <td>
+                    <img
+                      className="border border-3"
+                      style={{ borderRadius: "50%" }}
+                      height={40}
+                      width={40}
+                      src={item.img}
+                      alt=""
+                    />
+                  </td>
+                  <td>{item.title}</td>
+                  <td>{item.price}</td>
+                  <td>{item.quantity}</td>
+                  <td>{item.sale}</td>
+                  <td>{item.brand}</td>
+                  <td>{item.user}</td>
+                  <td>
+                    <div className="d-flex">
+                      <button
+                        className="btn-primary me-2"
+                        onClick={() => handleProductUpdate(item._id)}
+                      >
+                        Details
+                      </button>
+                      <button
+                        onClick={() => handleDelete(item._id)}
+                        className="btn-danger "
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
 
-      <Link
-        to="/additems"
-        className="item-btn w-25 mx-auto text-decoration-none d-block my-4"
-      >
-        Add New Item
-      </Link>
+          <Link
+            to="/additems"
+            className="item-btn w-25 mx-auto text-decoration-none d-block my-4"
+          >
+            Add New Item
+          </Link>
+        </div>
+      ) : (
+        <div>
+          <h4 className="text-warning">
+            Sorry ! You Need To Verify Your Email to Access this Feature{" "}
+          </h4>
+          <button
+            onClick={async () => {
+              await sendEmailVerification();
+              toast("Verification Mail sent! ");
+            }}
+            className="btn btn-link text-decoration-none"
+          >
+            Resend Email Verification?
+          </button>
+        </div>
+      )}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { FaUserAlt, FaLock } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 import { FiLock } from "react-icons/fi";
 import { toast } from "react-toastify";
+import Spinner from "../../../Pages/Spinner/Spinner";
 import "./SignUp.css";
 import Sociallogin from "../SocialLogin/Sociallogin";
 import { Link, useNavigate, useLocation } from "react-router-dom";
@@ -28,6 +29,9 @@ const Signup = () => {
   let errorMessage;
   if (error) {
     errorMessage = error.message;
+  }
+  if (loading) {
+    return <Spinner></Spinner>;
   }
   if (user) {
     navigate(from, { replace: true });
