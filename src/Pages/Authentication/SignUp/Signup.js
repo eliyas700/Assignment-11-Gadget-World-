@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaUserAlt, FaLock } from "react-icons/fa";
 import { GrMail } from "react-icons/gr";
 import { FiLock } from "react-icons/fi";
+import { toast } from "react-toastify";
 import "./SignUp.css";
 import Sociallogin from "../SocialLogin/Sociallogin";
 import { Link, useNavigate, useLocation } from "react-router-dom";
@@ -9,6 +10,7 @@ import PageTitle from "../../Shared/PageTitle/PageTitle";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
+  useSendEmailVerification,
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 const Signup = () => {
@@ -19,7 +21,14 @@ const Signup = () => {
   const navigate = useNavigate();
   const [checked, setChecked] = useState(false);
   const location = useLocation();
+  const [sendEmailVerification, sending, verificationerror] =
+    useSendEmailVerification(auth);
+
   let from = location.state?.from?.pathname || "/";
+  let errorMessage;
+  if (error) {
+    errorMessage = error.message;
+  }
   if (user) {
     navigate(from, { replace: true });
   }
@@ -33,9 +42,12 @@ const Signup = () => {
     if (password.length < 6) {
       return setErrorMsg("Password should Have At least 6 Characters");
     }
-    if (password === confirmPass) {
+    if (password === confirmPass && !error) {
       await createUserWithEmailAndPassword(email, password);
       await updateProfile({ displayName: name });
+      toast("Creating User ");
+      await sendEmailVerification();
+      toast("Verification Email Sent");
     } else {
       return setErrorMsg("Sorry! Password Didn't Match.");
     }
@@ -127,7 +139,7 @@ const Signup = () => {
                 />
               </div>
             </form>
-            <p className="text-danger my-2">{errorMsg}</p>
+            <p className="text-danger my-2">{errorMsg || errorMessage}</p>
             <Link to="/login" className="text-gadget text-start ">
               Already have an account?
             </Link>

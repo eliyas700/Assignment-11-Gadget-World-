@@ -4,6 +4,7 @@ import { TiArrowLeftThick } from "react-icons/ti";
 import { MdProductionQuantityLimits } from "react-icons/md";
 import { BsCartDashFill } from "react-icons/bs";
 import "./ItemDetail.css";
+import { toast } from "react-toastify";
 const ItemDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
@@ -36,7 +37,7 @@ const ItemDetail = () => {
     })
       .then((res) => res.json())
       .then((data) => console.log("Success", data));
-    alert("information Added Successfully");
+    toast("Delivered Successfully");
   };
   const handleRestock = (event) => {
     event.preventDefault();
@@ -61,7 +62,7 @@ const ItemDetail = () => {
       })
         .then((res) => res.json())
         .then((data) => console.log("Success", data));
-      alert("information Added Successfully");
+      toast(`${title} Stocked Successfully!`);
       event.target.reset();
     } else {
       setError("You Should Export a Positive Number");
