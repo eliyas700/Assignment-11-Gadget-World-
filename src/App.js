@@ -17,6 +17,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MyItems from "./Pages/MyItems/MyItems";
 import MyBlog from "./Pages/MyBlog/MyBlog";
+import About from "./Pages/AboutUs/About";
 function App() {
   return (
     <div className="App">
@@ -62,6 +63,7 @@ function App() {
           }
         ></Route>
         <Route path="/blog" element={<MyBlog></MyBlog>}></Route>
+        <Route path="/about" element={<About></About>}></Route>
         <Route path="/*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

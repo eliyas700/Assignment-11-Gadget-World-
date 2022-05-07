@@ -1,0 +1,31 @@
+.circular {
+    width: 150px;
+    height: 150px;
+    border-width: 15px !important;
+    border-color: rgba(64, 115, 158, .40) !important;
+    background-color: #fff !important;
+}
+
+.count {
+    padding: 40px 20px;
+    background: linear-gradient(rgba(116, 185, 255, .70), rgba(220, 221, 225, .70)), url("https://i.ibb.co/BK2rQmW/39390255-658348784552530-7151678159149072384-n.png") center no-repeat !important;
+
+
+}
+
+.count h2 {
+    color: rgba(25, 42, 86, 1.0) !important;
+    font-size: 45px !important;
+    margin-left: 25% !important;
+}
+
+.count h5 {
+    margin-left: 10% !important;
+    color: rgba(45, 52, 54, 1.0) !important;
+    font-family: 'Orelega One', cursive;
+    letter-spacing: 2px;
+}
+
+.certification {
+    background: rgba(64, 115, 158, 1.0);
+}
