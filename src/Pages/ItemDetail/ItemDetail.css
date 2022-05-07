@@ -181,15 +181,28 @@
     color: #115dd8;
 }
 
+.restock {
+    display: flex;
+}
+
+.item-btn-3 {
+    background-color: #16a085;
+}
+
 @media (max-width: 480px) {
     .card-area {
         display: flex !important;
-        background: red;
         flex-direction: column !important;
     }
 
     .card__body {
         display: flex;
         flex-direction: column;
+    }
+
+    .restock {
+        display: block !important;
+        text-align: right;
+
     }
 }

@@ -12,21 +12,24 @@ const About = () => {
         <div className="container-fluid py-5">
           <div className="container">
             <div className="row align-items-center">
-              <div className="col-lg-5">
+              <div className="col-lg-5 col-12">
                 <img
                   className="img-fluid"
                   src="https://i.ibb.co/6JKNBN8/82945168-2796311930459863-4447880986574716928-n.jpg"
                   alt=""
                 />
               </div>
-              <div className="col-lg-7 mt-5 mt-lg-0 pl-lg-5">
+              <div className="col-lg-7 col-12 mt-5 mt-lg-0 pl-lg-5">
                 <h3 className="text-gadget   text-uppercase fw-bold mb-3">
                   Learn About Us
                 </h3>
-                <h4 style={{ color: "#194376" }} className="mb-4 f-orelega">
+                <h4
+                  style={{ color: "#194376" }}
+                  className="mb-4 mb-sm-0 f-orelega"
+                >
                   We Are Quality Gadget Provider In Your City
                 </h4>
-                <h5 className="fw-bold fst-italic mb-4">
+                <h5 className="fw-bold fst-italic mb-4 mb-sm-0">
                   To provide quality products and services at great value in a
                   comfortable and friendly online shopping experience.
                 </h5>
@@ -102,7 +105,7 @@ const About = () => {
             <div className="row">
               <div className="col-lg-3 col-md-6">
                 <div className="d-flex flex-column align-items-center justify-content-center text-center mb-5">
-                  <div className="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4 circular">
+                  <div className="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4 mb-sm-0 circular">
                     <h2
                       style={{ color: "#00a8ff" }}
                       className="display-2 f-anton   m-0"
@@ -117,7 +120,7 @@ const About = () => {
               </div>
               <div className="col-lg-3 col-md-6">
                 <div className="d-flex flex-column align-items-center justify-content-center text-center mb-5">
-                  <div className="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4 circular">
+                  <div className="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4 mb-sm-0 circular">
                     <h2
                       style={{ color: "#00a8ff" }}
                       className="display-2 f-anton   m-0"
@@ -132,7 +135,7 @@ const About = () => {
               </div>
               <div className="col-lg-3 col-md-6">
                 <div className="d-flex flex-column align-items-center justify-content-center text-center mb-5">
-                  <div className="d-inline-flex circular align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4 ">
+                  <div className="d-inline-flex circular align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4 mb-sm-0 ">
                     <h2
                       style={{ color: "#00a8ff" }}
                       className="display-2 f-anton m-0"
@@ -147,7 +150,7 @@ const About = () => {
               </div>
               <div className="col-lg-3 col-md-6">
                 <div className="d-flex flex-column align-items-center justify-content-center text-center mb-5">
-                  <div className="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4 circular">
+                  <div className="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4 mb-sm-0 circular">
                     <h2
                       style={{ color: "#00a8ff" }}
                       className="display-2 f-anton  m-0"
@@ -173,7 +176,7 @@ const About = () => {
                 </h1>
                 <h2
                   style={{ color: "#194376" }}
-                  className="mb-4  fw-bolder f-orelega"
+                  className="mb-4 mb-sm-0  fw-bolder f-orelega"
                 >
                   Why Choose Us
                 </h2>
@@ -187,8 +190,8 @@ const About = () => {
                   getting you can Return it within 7 days without any Shipment
                   Charge.
                 </p>
-                <div className="row count">
-                  <div className="col-sm-6 mb-4">
+                <div className="row count mb-2">
+                  <div className="col-sm-6 mb-lg-4 mb-sm-0">
                     <CountUp start={0} end={10} delay={3}>
                       {({ countUpRef }) => (
                         <div>
@@ -202,7 +205,7 @@ const About = () => {
 
                     <h5 className="fw-bold">Years Expereince</h5>
                   </div>
-                  <div className="col-sm-6 mb-4">
+                  <div className="col-sm-6 mb-lg-4 mb-sm-0">
                     <CountUp start={0} end={225} delay={3}>
                       {({ countUpRef }) => (
                         <div>
@@ -215,7 +218,7 @@ const About = () => {
                     </CountUp>
                     <h5 className="fw-bold">Expert Worker</h5>
                   </div>
-                  <div className="col-sm-6 mb-4">
+                  <div className="col-sm-6 mb-lg-4 mb-sm-0">
                     <CountUp start={0} end={1050} delay={3}>
                       {({ countUpRef }) => (
                         <div>
@@ -228,7 +231,7 @@ const About = () => {
                     </CountUp>
                     <h5 className="fw-bold">Happy Clients</h5>
                   </div>
-                  <div className="col-sm-6 mb-4">
+                  <div className="col-sm-6 mb-lg-4 mb-sm-0">
                     <CountUp start={0} end={150} delay={3}>
                       {({ countUpRef }) => (
                         <div>

@@ -124,36 +124,38 @@ const ItemDetail = () => {
             </div>
           </div>
         </div>
-        <div className="card__footer">
+        <div className="card__footer ">
           <div className="recommend">
             <p>Supplied by</p>
             <h3>{brand}</h3>
           </div>
-          <div>
-            <form onSubmit={handleRestock}>
-              <label htmlFor="restock">
-                Restock <span className="fw-bold">{title}</span>
-              </label>
-              <input
-                type="number"
-                className="w-25"
-                name="restock"
-                id="restock"
-              />
-              <button className="item-btn-2 ms-2" type="submit">
-                Restock
+          <div className="restock">
+            <div>
+              <form onSubmit={handleRestock}>
+                <label htmlFor="restock">
+                  Restock <span className="fw-bold">{title}</span>
+                </label>
+                <input
+                  type="number"
+                  className="w-25"
+                  name="restock"
+                  id="restock"
+                />
+                <button className="item-btn-2 item-btn-3 ms-2" type="submit">
+                  Restock
+                </button>
+              </form>
+              <p className="text-danger">{error}</p>
+            </div>
+            <div>
+              <button
+                className="item-btn-2"
+                onClick={handleDelivered}
+                type="button"
+              >
+                Delivered
               </button>
-            </form>
-            <p className="text-danger">{error}</p>
-          </div>
-          <div>
-            <button
-              className="item-btn-2"
-              onClick={handleDelivered}
-              type="button"
-            >
-              Delivered
-            </button>
+            </div>
           </div>
         </div>
       </div>

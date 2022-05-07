@@ -7,7 +7,7 @@
 }
 
 .count {
-    padding: 40px 20px;
+    height: auto !important;
     background: linear-gradient(rgba(116, 185, 255, .70), rgba(220, 221, 225, .70)), url("https://i.ibb.co/BK2rQmW/39390255-658348784552530-7151678159149072384-n.png") center no-repeat !important;
 
 
@@ -29,4 +29,14 @@
 
 .certification {
     background: rgba(64, 115, 158, 1.0);
+}
+
+@media (max-width: 480px) {
+
+    .count h2,
+    .count-up {
+        color: rgba(25, 42, 86, 1.0) !important;
+        font-size: 25px !important;
+        margin-left: 20% !important;
+    }
 }
