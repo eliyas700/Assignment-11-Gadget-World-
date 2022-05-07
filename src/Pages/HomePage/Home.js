@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import Reviews from "../Customer-review/Reviews";
 import Items from "../Items/Items";
+import Partner from "../Partner/Partner";
 import Speciality from "../Speciality/Speciality";
 import Team from "../Team/Team";
 import "./Home.css";
@@ -74,6 +75,9 @@ const Home = () => {
       </div>
       <div>
         <Team></Team>
+      </div>
+      <div className="mt-4">
+        <Partner></Partner>
       </div>
     </div>
   );

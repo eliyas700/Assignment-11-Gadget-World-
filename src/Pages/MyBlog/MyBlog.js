@@ -11,7 +11,7 @@ const MyBlog = () => {
         My Blog
       </h2>
       <img
-        className="w-25"
+        className="w-25 mx-auto mb-4 d-block"
         src="https://i.ibb.co/xSJcJVY/SL-111019-24950-13-removebg-preview.png"
         alt=""
       />
