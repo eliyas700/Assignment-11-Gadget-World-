@@ -48,6 +48,8 @@ This web site is Mainly gadget products Related, in this site you will get the F
   - FontAwesome Icon
 - Accordion
   - Bootstrap Accordion
+- Animation
+- - React Counter
 
 ### `Data Base`
 

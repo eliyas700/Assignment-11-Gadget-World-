@@ -2,6 +2,7 @@ import React from "react";
 import PageTitle from "../Shared/PageTitle/PageTitle";
 import { FaCheck } from "react-icons/fa";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
+import CountUp from "react-countup";
 import "./About.css";
 const About = () => {
   return (
@@ -188,27 +189,56 @@ const About = () => {
                 </p>
                 <div className="row count">
                   <div className="col-sm-6 mb-4">
-                    <h2 className="f-anton fw-bold" data-toggle="counter-up">
-                      10
-                    </h2>
+                    <CountUp start={0} end={10} delay={3}>
+                      {({ countUpRef }) => (
+                        <div>
+                          <span
+                            className="f-anton fw-bold count-up"
+                            ref={countUpRef}
+                          />
+                        </div>
+                      )}
+                    </CountUp>
+
                     <h5 className="fw-bold">Years Expereince</h5>
                   </div>
                   <div className="col-sm-6 mb-4">
-                    <h2 className=" f-anton fw-bold" data-toggle="counter-up">
-                      225
-                    </h2>
+                    <CountUp start={0} end={225} delay={3}>
+                      {({ countUpRef }) => (
+                        <div>
+                          <span
+                            className="f-anton fw-bold count-up"
+                            ref={countUpRef}
+                          />
+                        </div>
+                      )}
+                    </CountUp>
                     <h5 className="fw-bold">Expert Worker</h5>
                   </div>
                   <div className="col-sm-6 mb-4">
-                    <h2 className=" f-anton" data-toggle="counter-up">
-                      1050
-                    </h2>
+                    <CountUp start={0} end={1050} delay={3}>
+                      {({ countUpRef }) => (
+                        <div>
+                          <span
+                            className="f-anton fw-bold count-up"
+                            ref={countUpRef}
+                          />
+                        </div>
+                      )}
+                    </CountUp>
                     <h5 className="fw-bold">Happy Clients</h5>
                   </div>
                   <div className="col-sm-6 mb-4">
-                    <h2 className=" f-anton" data-toggle="counter-up">
-                      150
-                    </h2>
+                    <CountUp start={0} end={150} delay={3}>
+                      {({ countUpRef }) => (
+                        <div>
+                          <span
+                            className="f-anton fw-bold count-up"
+                            ref={countUpRef}
+                          />
+                        </div>
+                      )}
+                    </CountUp>
                     <h5 className="fw-bold">Gadget Items</h5>
                   </div>
                 </div>
@@ -220,7 +250,14 @@ const About = () => {
                     style={{ fontSize: "75px", letterSpacing: "5px" }}
                     className="display-1 f-anton text-white fw-bolder  mb-3"
                   >
-                    10+
+                    <CountUp start={0} end={10} delay={2}>
+                      {({ countUpRef }) => (
+                        <div className="d-inline">
+                          <span ref={countUpRef} />
+                        </div>
+                      )}
+                    </CountUp>
+                    +
                   </h1>
                   <h1
                     style={{ fontSize: "45px", letterSpacing: "5px" }}
