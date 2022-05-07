@@ -4,7 +4,7 @@ import { AiOutlineDoubleRight } from "react-icons/ai";
 import useItems from "../../Hooks/useItems";
 import { Link } from "react-router-dom";
 const Items = () => {
-  const [items, setItems] = useItems([]);
+  const [items, setItems, isLoading] = useItems([]);
   return (
     <div>
       <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
