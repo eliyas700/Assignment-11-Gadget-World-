@@ -4,6 +4,7 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
+import CustomLink from "../CustomLink/CustomLink";
 import PageTitle from "../PageTitle/PageTitle";
 import "./Header.css";
 const Header = () => {
@@ -33,28 +34,32 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/">
-                Home
+              <Nav.Link>
+                <CustomLink to="/">Home</CustomLink>
               </Nav.Link>
-              <Nav.Link href="home#items">Products</Nav.Link>
-              <Nav.Link as={Link} to="/blog">
-                Blogs
+              <Nav.Link style={{ color: "#dff9fb" }} href="home#items">
+                Products
               </Nav.Link>
-              <Nav.Link as={Link} to="/about">
-                About us
+              <Nav.Link>
+                <CustomLink to="/blog">Blogs</CustomLink>
+              </Nav.Link>
+              <Nav.Link>
+                <CustomLink to="/about">About us</CustomLink>
               </Nav.Link>
             </Nav>
             <Nav>
               {user ? (
                 <>
-                  <Nav.Link as={Link} to="/manageitems">
-                    Manage Items
+                  <Nav.Link>
+                    <CustomLink to="/manageitems">Manage Items</CustomLink>
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/additems">
-                    Add Items
+                  <Nav.Link>
+                    <CustomLink to="/additems"> Add Items</CustomLink>
                   </Nav.Link>
                   <Nav.Link as={Link} to="/myitems">
-                    My Items
+                    <CustomLink as={Link} to="/myitems">
+                      My Items
+                    </CustomLink>
                   </Nav.Link>
                   <Nav.Link as={Link} to="/login">
                     <button

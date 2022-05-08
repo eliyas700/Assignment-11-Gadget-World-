@@ -1,8 +1,8 @@
 .navbar-nav a {
 
     font-family: Oswald, HelveticaNeue, Helvetica Neue, sans-serif;
+    text-decoration: none;
     font-size: 15px;
-    color: #fff !important;
     font-weight: 600;
     text-transform: uppercase;
 }
