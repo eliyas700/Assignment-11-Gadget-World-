@@ -85,8 +85,8 @@ const Header = () => {
                   </Nav.Link>
                 </>
               ) : (
-                <Nav.Link as={Link} to="/login">
-                  Log In
+                <Nav.Link>
+                  <CustomLink to="/login"> Log In</CustomLink>
                 </Nav.Link>
               )}
             </Nav>

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import AOS from "aos";
 import "./Item.css";
 const Item = ({ item }) => {
   const { _id, title, img, description, price, brand, quantity, sale } = item;
@@ -10,9 +11,20 @@ const Item = ({ item }) => {
   const handleProductUpdate = (id) => {
     navigate(`/item/${id}`);
   };
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className=" item col-12 col-lg-4 col-md-6">
-      <div className="card">
+      <div
+        data-aos="zoom-in-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        className="card"
+      >
         <div className="image">
           <img width={120} height={260} src={img} alt="" />
         </div>

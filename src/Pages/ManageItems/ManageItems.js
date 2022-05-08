@@ -39,10 +39,23 @@ const ManageItems = () => {
   return (
     <div style={{ width: "100vw" }}>
       <PageTitle title="Manage Item"></PageTitle>
-      <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
+      <h2
+        data-aos="zoom-in-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        style={{ color: "#4834d4" }}
+        className="my-4 f-anton"
+      >
         Manage Items
       </h2>
       <img
+        data-aos="zoom-in-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
         className="w-25 mb-3"
         src="https://i.ibb.co/xSJcJVY/SL-111019-24950-13-removebg-preview.png"
         alt=""
@@ -50,7 +63,16 @@ const ManageItems = () => {
       {emailVerified ? (
         <div className="container-fluid">
           <div className="big-screen">
-            <Table striped bordered hover>
+            <Table
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              striped
+              bordered
+              hover
+            >
               <thead>
                 <tr>
                   <th>Photo</th>
@@ -110,7 +132,14 @@ const ManageItems = () => {
               Add New Item
             </Link>
           </div>
-          <div className="small-screen row ">
+          <div
+            data-aos="zoom-in-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            className="small-screen row "
+          >
             {items.map((item) => (
               <div key={item._id} className="col-12 border border-2 mb-4 mx-2">
                 <div className="card mb-3">
@@ -170,10 +199,22 @@ const ManageItems = () => {
       ) : (
         <div>
           <div>
-            <h4 className="text-warning">
+            <h4
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              className="text-danger"
+            >
               Sorry ! You Need To Verify Your Email to Access this Feature{" "}
             </h4>
             <button
+              data-aos="fade-right"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
               onClick={async () => {
                 await sendEmailVerification();
                 toast("Verification Mail sent! ");

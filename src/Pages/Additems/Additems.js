@@ -33,10 +33,23 @@ const Additems = () => {
   return (
     <div>
       <PageTitle title="Add Items"></PageTitle>
-      <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
+      <h2
+        data-aos="zoom-in-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        style={{ color: "#4834d4" }}
+        className="my-4 f-anton"
+      >
         Add a Product
       </h2>
       <img
+        data-aos="zoom-in-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
         className="w-25"
         src="https://i.ibb.co/xSJcJVY/SL-111019-24950-13-removebg-preview.png"
         alt=""
@@ -96,15 +109,36 @@ const Additems = () => {
               {...register("description", { required: true })}
             />
 
-            <input type="submit" className="item-btn" value="Add Now" />
+            <input
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="70"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              type="submit"
+              className="item-btn"
+              value="Add Now"
+            />
           </form>
         </div>
       ) : (
         <div>
-          <h4 className="text-danger">
+          <h4
+            data-aos="zoom-in-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            className="text-danger"
+          >
             Sorry ! You Need To Verify Your Email to Access this Feature{" "}
           </h4>
           <button
+            data-aos="zoom-in-up"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
             onClick={async () => {
               await sendEmailVerification();
               toast("Verification Mail sent! ");

@@ -12,14 +12,28 @@ const About = () => {
         <div className="container-fluid py-5">
           <div className="container">
             <div className="row align-items-center">
-              <div className="col-lg-5 col-12">
+              <div
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                className="col-lg-5 col-12"
+              >
                 <img
                   className="img-fluid"
                   src="https://i.ibb.co/6JKNBN8/82945168-2796311930459863-4447880986574716928-n.jpg"
                   alt=""
                 />
               </div>
-              <div className="col-lg-7 col-12 mt-5 mt-lg-0 pl-lg-5">
+              <div
+                data-aos="fade-left"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                className="col-lg-7 col-12 mt-5 mt-lg-0 pl-lg-5"
+              >
                 <h3 className="text-gadget   text-uppercase fw-bold mb-3">
                   Learn About Us
                 </h3>
@@ -46,7 +60,14 @@ const About = () => {
                 </p>
                 <div className="row">
                   <div className="col-sm-6 pt-3">
-                    <div className="d-flex align-items-center ">
+                    <div
+                      data-aos="zoom-in-up"
+                      data-aos-offset="200"
+                      data-aos-delay="50"
+                      data-aos-duration="1000"
+                      data-aos-easing="ease-in-out"
+                      className="d-flex align-items-center "
+                    >
                       <span className="me-2">
                         <FaCheck />
                       </span>
@@ -56,7 +77,14 @@ const About = () => {
                     </div>
                   </div>
                   <div className="col-sm-6 pt-3">
-                    <div className="m-0 d-flex align-items-center">
+                    <div
+                      data-aos="zoom-in-up"
+                      data-aos-offset="200"
+                      data-aos-delay="70"
+                      data-aos-duration="1000"
+                      data-aos-easing="ease-in-out"
+                      className="m-0 d-flex align-items-center"
+                    >
                       <span className="me-2">
                         <FaCheck />
                       </span>
@@ -66,7 +94,14 @@ const About = () => {
                     </div>
                   </div>
                   <div className="col-sm-6 pt-3">
-                    <div className="m-0 d-flex align-items-center">
+                    <div
+                      data-aos="zoom-in-up"
+                      data-aos-offset="200"
+                      data-aos-delay="90"
+                      data-aos-duration="1000"
+                      data-aos-easing="ease-in-out"
+                      className="m-0 d-flex align-items-center"
+                    >
                       <span className="me-2">
                         <FaCheck />
                       </span>
@@ -76,7 +111,14 @@ const About = () => {
                     </div>
                   </div>
                   <div className="col-sm-6 pt-3">
-                    <div className="m-0 d-flex align-items-center">
+                    <div
+                      data-aos="zoom-in-up"
+                      data-aos-offset="200"
+                      data-aos-delay="110"
+                      data-aos-duration="1000"
+                      data-aos-easing="ease-in-out"
+                      className="m-0 d-flex align-items-center"
+                    >
                       <span className="me-2">
                         <FaCheck />
                       </span>
@@ -93,10 +135,22 @@ const About = () => {
 
         <div className="container-fluid pt-5">
           <div className="container">
-            <h1 className="text-gadget   text-uppercase text-center fw-bold mb-3">
+            <h1
+              data-aos="fade-right"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              className="text-gadget   text-uppercase text-center fw-bold mb-3"
+            >
               Working Process
             </h1>
             <h2
+              data-aos="fade-left"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
               style={{ color: "#194376" }}
               className=" text-center f-orelega fw-bold mb-5"
             >
@@ -104,7 +158,14 @@ const About = () => {
             </h2>
             <div className="row">
               <div className="col-lg-3 col-md-6">
-                <div className="d-flex flex-column align-items-center justify-content-center text-center mb-5">
+                <div
+                  data-aos="zoom-in-up"
+                  data-aos-offset="200"
+                  data-aos-delay="50"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease-in-out"
+                  className="d-flex flex-column align-items-center justify-content-center text-center mb-5"
+                >
                   <div className="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4 mb-sm-0 circular">
                     <h2
                       style={{ color: "#00a8ff" }}
@@ -119,7 +180,14 @@ const About = () => {
                 </div>
               </div>
               <div className="col-lg-3 col-md-6">
-                <div className="d-flex flex-column align-items-center justify-content-center text-center mb-5">
+                <div
+                  data-aos="zoom-in-up"
+                  data-aos-offset="200"
+                  data-aos-delay="70"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease-in-out"
+                  className="d-flex flex-column align-items-center justify-content-center text-center mb-5"
+                >
                   <div className="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4 mb-sm-0 circular">
                     <h2
                       style={{ color: "#00a8ff" }}
@@ -134,7 +202,14 @@ const About = () => {
                 </div>
               </div>
               <div className="col-lg-3 col-md-6">
-                <div className="d-flex flex-column align-items-center justify-content-center text-center mb-5">
+                <div
+                  data-aos="zoom-in-up"
+                  data-aos-offset="200"
+                  data-aos-delay="90"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease-in-out"
+                  className="d-flex flex-column align-items-center justify-content-center text-center mb-5"
+                >
                   <div className="d-inline-flex circular align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4 mb-sm-0 ">
                     <h2
                       style={{ color: "#00a8ff" }}
@@ -149,7 +224,14 @@ const About = () => {
                 </div>
               </div>
               <div className="col-lg-3 col-md-6">
-                <div className="d-flex flex-column align-items-center justify-content-center text-center mb-5">
+                <div
+                  data-aos="zoom-in-up"
+                  data-aos-offset="200"
+                  data-aos-delay="110"
+                  data-aos-duration="1000"
+                  data-aos-easing="ease-in-out"
+                  className="d-flex flex-column align-items-center justify-content-center text-center mb-5"
+                >
                   <div className="d-inline-flex align-items-center justify-content-center bg-white border border-light shadow rounded-circle mb-4 mb-sm-0 circular">
                     <h2
                       style={{ color: "#00a8ff" }}
@@ -170,7 +252,14 @@ const About = () => {
         <div className="container-fluid py-5">
           <div className="container">
             <div className="row">
-              <div className="col-lg-7 m-0 my-lg-5 pt-0 pt-lg-5 pr-lg-5">
+              <div
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                className="col-lg-7 m-0 my-lg-5 pt-0 pt-lg-5 pr-lg-5"
+              >
                 <h1 className="text-gadget text-uppercase fw-bold mb-3">
                   Our Features
                 </h1>
@@ -192,74 +281,91 @@ const About = () => {
                 </p>
                 <div className="row count mb-2">
                   <div className="col-sm-6 mb-lg-4 mb-sm-0">
-                    <CountUp start={0} end={10} delay={3}>
-                      {({ countUpRef }) => (
-                        <div>
-                          <span
-                            className="f-anton fw-bold count-up"
-                            ref={countUpRef}
-                          />
-                        </div>
-                      )}
-                    </CountUp>
+                    {(
+                      <CountUp start={0} end={10} delay={3}>
+                        {({ countUpRef }) => (
+                          <div>
+                            <span
+                              className="f-anton fw-bold count-up"
+                              ref={countUpRef}
+                            />
+                          </div>
+                        )}
+                      </CountUp>
+                    ) || 10}
 
                     <h5 className="fw-bold">Years Expereince</h5>
                   </div>
                   <div className="col-sm-6 mb-lg-4 mb-sm-0">
-                    <CountUp start={0} end={225} delay={3}>
-                      {({ countUpRef }) => (
-                        <div>
-                          <span
-                            className="f-anton fw-bold count-up"
-                            ref={countUpRef}
-                          />
-                        </div>
-                      )}
-                    </CountUp>
+                    {(
+                      <CountUp start={0} end={225} delay={3}>
+                        {({ countUpRef }) => (
+                          <div>
+                            <span
+                              className="f-anton fw-bold count-up"
+                              ref={countUpRef}
+                            />
+                          </div>
+                        )}
+                      </CountUp>
+                    ) || 225}
                     <h5 className="fw-bold">Expert Worker</h5>
                   </div>
                   <div className="col-sm-6 mb-lg-4 mb-sm-0">
-                    <CountUp start={0} end={1050} delay={3}>
-                      {({ countUpRef }) => (
-                        <div>
-                          <span
-                            className="f-anton fw-bold count-up"
-                            ref={countUpRef}
-                          />
-                        </div>
-                      )}
-                    </CountUp>
+                    {(
+                      <CountUp start={0} end={1050} delay={3}>
+                        {({ countUpRef }) => (
+                          <div>
+                            <span
+                              className="f-anton fw-bold count-up"
+                              ref={countUpRef}
+                            />
+                          </div>
+                        )}
+                      </CountUp>
+                    ) || 1050}
                     <h5 className="fw-bold">Happy Clients</h5>
                   </div>
                   <div className="col-sm-6 mb-lg-4 mb-sm-0">
-                    <CountUp start={0} end={150} delay={3}>
-                      {({ countUpRef }) => (
-                        <div>
-                          <span
-                            className="f-anton fw-bold count-up"
-                            ref={countUpRef}
-                          />
-                        </div>
-                      )}
-                    </CountUp>
+                    {(
+                      <CountUp start={0} end={150} delay={3}>
+                        {({ countUpRef }) => (
+                          <div>
+                            <span
+                              className="f-anton fw-bold count-up"
+                              ref={countUpRef}
+                            />
+                          </div>
+                        )}
+                      </CountUp>
+                    ) || 150}
                     <h5 className="fw-bold">Gadget Items</h5>
                   </div>
                 </div>
               </div>
-              <div className="col-lg-5">
+              <div
+                data-aos="fade-left"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                className="col-lg-5"
+              >
                 <div className="d-flex flex-column align-items-center justify-content-center certification h-100 py-5 px-3">
                   <AiOutlineSafetyCertificate color="white" size={100} />
                   <h1
                     style={{ fontSize: "75px", letterSpacing: "5px" }}
                     className="display-1 f-anton text-white fw-bolder  mb-3"
                   >
-                    <CountUp start={0} end={10} delay={2}>
-                      {({ countUpRef }) => (
-                        <div className="d-inline">
-                          <span ref={countUpRef} />
-                        </div>
-                      )}
-                    </CountUp>
+                    {(
+                      <CountUp start={0} end={10} delay={2}>
+                        {({ countUpRef }) => (
+                          <div className="d-inline">
+                            <span ref={countUpRef} />
+                          </div>
+                        )}
+                      </CountUp>
+                    ) || 10}
                     +
                   </h1>
                   <h1

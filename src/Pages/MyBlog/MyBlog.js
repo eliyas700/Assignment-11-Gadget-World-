@@ -7,16 +7,36 @@ const MyBlog = () => {
       style={{ minHeight: "90vh", textAlign: "left" }}
       className="container mx-auto "
     >
-      <h2 style={{ color: "#4834d4" }} className="my-4 text-center f-anton">
+      <h2
+        data-aos="zoom-in-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        style={{ color: "#4834d4" }}
+        className="my-4 text-center f-anton"
+      >
         My Blog
       </h2>
       <img
+        data-aos="zoom-in-up"
+        data-aos-offset="200"
+        data-aos-delay="50"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
         className="w-25 mx-auto mb-4 d-block"
         src="https://i.ibb.co/xSJcJVY/SL-111019-24950-13-removebg-preview.png"
         alt=""
       />
       <Accordion defaultActiveKey="0" flush>
-        <Accordion.Item eventKey="0">
+        <Accordion.Item
+          eventKey="0"
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+        >
           <Accordion.Header>
             <h5>What is Difference between javascript and nodejs?</h5>
           </Accordion.Header>
@@ -48,7 +68,14 @@ const MyBlog = () => {
             are to be imported from npm.
           </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item eventKey="1">
+        <Accordion.Item
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-delay="60"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          eventKey="1"
+        >
           <Accordion.Header>
             <h5>When should you use nodejs and when should you use mongodb?</h5>
           </Accordion.Header>
@@ -75,7 +102,14 @@ const MyBlog = () => {
             <b>Supporting agile development and collaboration</b>
           </Accordion.Body>
         </Accordion.Item>
-        <Accordion.Item eventKey="2">
+        <Accordion.Item
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-delay="70"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          eventKey="2"
+        >
           <Accordion.Header>
             <h5>What is the Differences between SQL and NoSQL databases.?</h5>
           </Accordion.Header>
@@ -100,7 +134,14 @@ const MyBlog = () => {
           </Accordion.Body>
         </Accordion.Item>
 
-        <Accordion.Item eventKey="3">
+        <Accordion.Item
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-delay="80"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          eventKey="3"
+        >
           <Accordion.Header>
             <h5>What is the purpose of JWT and how does it work?</h5>
           </Accordion.Header>

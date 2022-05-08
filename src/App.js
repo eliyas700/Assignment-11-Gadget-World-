@@ -19,8 +19,13 @@ import MyItems from "./Pages/MyItems/MyItems";
 import MyBlog from "./Pages/MyBlog/MyBlog";
 import About from "./Pages/AboutUs/About";
 import ScrollUp from "./Pages/ScrollToTop/ScrollUp";
-import Contact from "./Pages/Contact/Contact";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div className="App">
       <Header></Header>

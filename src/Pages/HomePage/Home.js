@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import useItems from "../../Hooks/useItems";
 import Contact from "../Contact/Contact";
@@ -8,6 +8,7 @@ import Loading from "../Loading/Loading";
 import Partner from "../Partner/Partner";
 import Speciality from "../Speciality/Speciality";
 import Team from "../Team/Team";
+import AOS from "aos";
 import "./Home.css";
 const Home = () => {
   const [index, setIndex] = useState(0);
@@ -15,6 +16,9 @@ const Home = () => {
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
       <Carousel activeIndex={index} onSelect={handleSelect}>
@@ -26,7 +30,15 @@ const Home = () => {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>iMac-2022</h3>
+            <h3
+              data-aos="fade-up-right"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+            >
+              iMac-2022
+            </h3>
             <p>Now available on Gadget World</p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -39,7 +51,15 @@ const Home = () => {
           />
 
           <Carousel.Caption>
-            <h3>Eco Bubble</h3>
+            <h3
+              data-aos="fade-up-right"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+            >
+              Eco Bubble
+            </h3>
             <p>
               Washes using 30% of the energy <br /> Bubbles do the rest
             </p>
@@ -54,7 +74,15 @@ const Home = () => {
           />
 
           <Carousel.Caption>
-            <h3>Smart Watch Series-2</h3>
+            <h3
+              data-aos="fade-up-right"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+            >
+              Smart Watch Series-2
+            </h3>
             <p>Now Available on Gadget-World</p>
           </Carousel.Caption>
         </Carousel.Item>
@@ -70,10 +98,23 @@ const Home = () => {
             <Reviews></Reviews>
           </div>
           <div>
-            <h2 style={{ color: "#4834d4" }} className="my-4 f-anton">
+            <h2
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              style={{ color: "#4834d4" }}
+              className="my-4 f-anton"
+            >
               Why Us?
             </h2>
             <img
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
               className="w-25"
               src="https://i.ibb.co/xSJcJVY/SL-111019-24950-13-removebg-preview.png"
               alt=""

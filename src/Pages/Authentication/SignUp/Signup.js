@@ -61,9 +61,30 @@ const Signup = () => {
       <PageTitle title="Sign Up "></PageTitle>
       <div className="container">
         <div className="signup-content row justify-content-between">
-          <div className="m-0 col-12 col-lg-6">
-            <h2 className=" py-3">Create Account</h2>
+          <div
+            data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            className="m-0 col-12 col-lg-6"
+          >
+            <h2
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="70"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              className=" py-3"
+            >
+              Create Account
+            </h2>
             <form
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
               onSubmit={handleSubmit}
               className="register-form w-75 mx-auto"
               id="register-form"
@@ -132,7 +153,14 @@ const Signup = () => {
                   </label>
                 </div>
               </div>
-              <div className="form-group form-button">
+              <div
+                data-aos="zoom-in-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                className="form-group form-button"
+              >
                 <input
                   type="submit"
                   name="signup"
@@ -144,14 +172,35 @@ const Signup = () => {
               </div>
             </form>
             <p className="text-danger my-2">{errorMsg || errorMessage}</p>
-            <Link to="/login" className="text-gadget text-start ">
+            <Link
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              to="/login"
+              className="text-gadget text-start "
+            >
               Already have an account?
             </Link>
-            <div>
+            <div
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+            >
               <Sociallogin></Sociallogin>
             </div>
           </div>
-          <div className="signup-image col-12 col-lg-6">
+          <div
+            data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            className="signup-image col-12 col-lg-6"
+          >
             <figure>
               <img
                 src="https://i.ibb.co/Bq58st5/create-account-illustration-vector-removebg-preview.png"

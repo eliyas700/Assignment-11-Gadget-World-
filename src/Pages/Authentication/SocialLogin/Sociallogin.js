@@ -38,13 +38,21 @@ const Sociallogin = () => {
       <div className="d-flex justify-content-center my-4">
         <p className="social-label">Or login with</p>
         <ul className="socials d-flex ">
-          <li>
+          <li
+            onClick={() =>
+              alert("Sorry! This Feature Is Currently not Available!")
+            }
+          >
             <FaFacebookSquare color="#4867AA" size={30} />
           </li>
           <li onClick={() => signInWithGoogle()}>
             <FcGoogle size={30} />
           </li>
-          <li>
+          <li
+            onClick={() =>
+              alert("Sorry! This Feature Is Currently not Available!")
+            }
+          >
             <FaGithub color="#1B1F23" size={30} />
           </li>
         </ul>

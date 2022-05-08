@@ -64,14 +64,42 @@ const Login = () => {
       <PageTitle title="Log In "></PageTitle>
       <div className="container">
         <div className="signup-content row justify-content-between">
-          <div className="m-0 col-12 col-lg-6">
-            <h2 className=" py-3">Log In</h2>
+          <div
+            data-aos="fade-right"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            className="m-0 col-12 col-lg-6"
+          >
+            <h2
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+              className=" py-3"
+            >
+              Log In
+            </h2>
             <form
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="70"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
               onSubmit={handleLogin}
               className="register-form w-75 mx-auto"
               id="register-form"
             >
-              <div className="form-group aliign d-flex">
+              <div
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                className="form-group aliign d-flex"
+              >
                 <label htmlFor="email">
                   <GrMail />
                 </label>
@@ -83,7 +111,14 @@ const Login = () => {
                   placeholder="Your Email"
                 />
               </div>
-              <div className="form-group d-flex align-items-center">
+              <div
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                className="form-group d-flex align-items-center"
+              >
                 <label htmlFor="pass">
                   <FiLock />
                 </label>
@@ -95,13 +130,26 @@ const Login = () => {
                 />
               </div>
 
-              <p>
+              <p
+                data-aos="zoom-in-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+              >
                 Forget Password ?{" "}
                 <button onClick={resetPassword} className="btn btn-link">
                   Reset Password
                 </button>
               </p>
-              <div className="form-group form-button">
+              <div
+                data-aos="zoom-in-up"
+                data-aos-offset="200"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                className="form-group form-button"
+              >
                 <input
                   type="submit"
                   name="signup"
@@ -112,18 +160,37 @@ const Login = () => {
               </div>
               <p className="text-danger">{errorMessage}</p>
             </form>
-            <p>
+            <p
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+            >
               New at Gadget World?{" "}
               <Link to="/signup" className="text-gadget btn btn-link">
                 Create an Account
               </Link>
             </p>
 
-            <div>
+            <div
+              data-aos="zoom-in-up"
+              data-aos-offset="200"
+              data-aos-delay="70"
+              data-aos-duration="1000"
+              data-aos-easing="ease-in-out"
+            >
               <Sociallogin></Sociallogin>
             </div>
           </div>
-          <div className="signup-image col-12 col-lg-6">
+          <div
+            data-aos="fade-left"
+            data-aos-offset="200"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            className="signup-image col-12 col-lg-6"
+          >
             <figure>
               <img
                 src="https://i.ibb.co/Bq58st5/create-account-illustration-vector-removebg-preview.png"

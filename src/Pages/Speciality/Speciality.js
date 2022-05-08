@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Speciality.css";
+import AOS from "aos";
 const Speciality = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <div>
       <div className="special-container m-0 row justify-content-center align-items-center">
-        <div className="card mx-3 col-12 col-lg-4">
+        <div
+          data-aos="fade-right"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          className="card mx-3 col-12 col-lg-4"
+        >
           <div className="face face1">
             <div className="content">
               <img src="https://i.ibb.co/xg2mMq9/p-1-72x.webp" />
@@ -21,7 +32,14 @@ const Speciality = () => {
             </div>
           </div>
         </div>
-        <div className="card mx-3 col-12 col-lg-4">
+        <div
+          data-aos="fade-down"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          className="card mx-3 col-12 col-lg-4"
+        >
           <div className="face face1">
             <div className="content">
               <img src="https://i.ibb.co/P1Yf5nF/p-2-72x.webp" />
@@ -38,7 +56,14 @@ const Speciality = () => {
             </div>
           </div>
         </div>
-        <div className="card mx-3 col-12 col-lg-4">
+        <div
+          data-aos="fade-left"
+          data-aos-offset="200"
+          data-aos-delay="50"
+          data-aos-duration="1000"
+          data-aos-easing="ease-in-out"
+          className="card mx-3 col-12 col-lg-4"
+        >
           <div className="face face1">
             <div className="content">
               <img src="https://i.ibb.co/KVLjCyd/p-3-72x.webp" alt="" />
