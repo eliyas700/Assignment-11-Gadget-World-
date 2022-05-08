@@ -70,7 +70,7 @@ const Footer = () => {
         <div className=" footer-block  col-md-3">
           <div className="title-block">FOLLOW US</div>
           <div className="social-icons">
-            <ul className="d-flex justify-content-evenly p-0">
+            <ul className="d-flex justify-content-evenly p-0 socials">
               <li>
                 <a href="https://facebook.com/" title="Facebook">
                   <FaFacebookF size={20} style={{ color: "#2d3436" }} />

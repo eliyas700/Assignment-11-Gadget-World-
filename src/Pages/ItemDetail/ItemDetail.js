@@ -109,7 +109,8 @@ const ItemDetail = () => {
                 <p>{description}</p>
               </div>
               <span className="stock">
-                <MdProductionQuantityLimits /> In stock: {quantity}
+                <MdProductionQuantityLimits />
+                {quantity === 0 ? "Out Of Stock" : `In Stock :${quantity}`}
               </span>
               <p className="text-danger my-3 fw-bold">
                 <BsCartDashFill />
