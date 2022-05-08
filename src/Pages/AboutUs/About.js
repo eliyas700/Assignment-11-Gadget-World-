@@ -43,11 +43,11 @@ const About = () => {
                 >
                   We Are Quality Gadget Provider In Your City
                 </h4>
-                <h5 className="fw-bold fst-italic mb-4 mb-sm-0">
+                <h5 className="fw-bold fst-italic my-4 mb-sm-0">
                   To provide quality products and services at great value in a
                   comfortable and friendly online shopping experience.
                 </h5>
-                <p className="mb-2 text-muted">
+                <p className="mb-2 mt-4 text-muted">
                   <strong>Gadget World </strong> is a for all your gadgets and
                   gifting needs, with thousands of products handpicked by our
                   team with one question running through their heads - “How much
@@ -281,64 +281,61 @@ const About = () => {
                 </p>
                 <div className="row count mb-2">
                   <div className="col-sm-6 mb-lg-4 mb-sm-0">
-                    {(
-                      <CountUp start={0} end={10} delay={3}>
-                        {({ countUpRef }) => (
-                          <div>
-                            <span
-                              className="f-anton fw-bold count-up"
-                              ref={countUpRef}
-                            />
-                          </div>
-                        )}
-                      </CountUp>
-                    ) || 10}
-
+                    {/* <CountUp start={0} end={10} delay={3}>
+                      {({ countUpRef }) => (
+                        <div>
+                          <span
+                            className="f-anton fw-bold count-up"
+                            ref={countUpRef}
+                          />
+                        </div>
+                      )}
+                    </CountUp> */}
+                    <span className="f-anton fw-bold count-up">10</span>
                     <h5 className="fw-bold">Years Expereince</h5>
                   </div>
                   <div className="col-sm-6 mb-lg-4 mb-sm-0">
-                    {(
-                      <CountUp start={0} end={225} delay={3}>
-                        {({ countUpRef }) => (
-                          <div>
-                            <span
-                              className="f-anton fw-bold count-up"
-                              ref={countUpRef}
-                            />
-                          </div>
-                        )}
-                      </CountUp>
-                    ) || 225}
+                    {/* <CountUp start={0} end={225} delay={3}>
+                      {({ countUpRef }) => (
+                        <div>
+                          <span
+                            className="f-anton fw-bold count-up"
+                            ref={countUpRef}
+                          />
+                        </div>
+                      )}
+                    </CountUp> */}
+                    <span className="f-anton fw-bold count-up">225</span>
                     <h5 className="fw-bold">Expert Worker</h5>
                   </div>
                   <div className="col-sm-6 mb-lg-4 mb-sm-0">
-                    {(
-                      <CountUp start={0} end={1050} delay={3}>
-                        {({ countUpRef }) => (
-                          <div>
-                            <span
-                              className="f-anton fw-bold count-up"
-                              ref={countUpRef}
-                            />
-                          </div>
-                        )}
-                      </CountUp>
-                    ) || 1050}
+                    {/* <CountUp start={0} end={1050} delay={3}>
+                      {({ countUpRef }) => (
+                        <div>
+                          <span
+                            className="f-anton fw-bold count-up"
+                            ref={countUpRef}
+                          />
+                        </div>
+                      )}
+                    </CountUp> */}
+                    <span className="f-anton fw-bold count-up">1050</span>
+
                     <h5 className="fw-bold">Happy Clients</h5>
                   </div>
                   <div className="col-sm-6 mb-lg-4 mb-sm-0">
-                    {(
-                      <CountUp start={0} end={150} delay={3}>
-                        {({ countUpRef }) => (
-                          <div>
-                            <span
-                              className="f-anton fw-bold count-up"
-                              ref={countUpRef}
-                            />
-                          </div>
-                        )}
-                      </CountUp>
-                    ) || 150}
+                    {/* <CountUp start={0} end={150} delay={3}>
+                      {({ countUpRef }) => (
+                        <div>
+                          <span
+                            className="f-anton fw-bold count-up"
+                            ref={countUpRef}
+                          />
+                        </div>
+                      )}
+                    </CountUp> */}
+                    <span className="f-anton fw-bold count-up">150</span>
+
                     <h5 className="fw-bold">Gadget Items</h5>
                   </div>
                 </div>
@@ -357,16 +354,14 @@ const About = () => {
                     style={{ fontSize: "75px", letterSpacing: "5px" }}
                     className="display-1 f-anton text-white fw-bolder  mb-3"
                   >
-                    {(
-                      <CountUp start={0} end={10} delay={2}>
-                        {({ countUpRef }) => (
-                          <div className="d-inline">
-                            <span ref={countUpRef} />
-                          </div>
-                        )}
-                      </CountUp>
-                    ) || 10}
-                    +
+                    {/* <CountUp start={0} end={10} delay={2}>
+                      {({ countUpRef }) => (
+                        <div className="d-inline">
+                          <span ref={countUpRef} />
+                        </div>
+                      )}
+                    </CountUp> */}
+                    <span className="d-inline">10</span>
                   </h1>
                   <h1
                     style={{ fontSize: "45px", letterSpacing: "5px" }}
