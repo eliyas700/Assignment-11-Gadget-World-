@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Carousel } from "react-bootstrap";
 import useItems from "../../Hooks/useItems";
+import Contact from "../Contact/Contact";
 import Reviews from "../Customer-review/Reviews";
 import Items from "../Items/Items";
 import Loading from "../Loading/Loading";
@@ -84,6 +85,9 @@ const Home = () => {
           </div>
           <div className="mt-4">
             <Partner></Partner>
+          </div>
+          <div>
+            <Contact></Contact>
           </div>
         </div>
       )}

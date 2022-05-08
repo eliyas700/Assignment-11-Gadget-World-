@@ -68,6 +68,31 @@
   opacity: 0.5;
 }
 
+.contact {
+  background-color: transparent !important;
+  position: fixed;
+  bottom: 30%;
+  box-sizing: border-box !important;
+  outline: none !important;
+  left: 90%;
+  border: none !important;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.7;
+}
+
+.contact img {
+  /* background-color: transparent !important; */
+  width: 45px;
+  height: 45px;
+}
+
+.contact:hover {
+  opacity: 1;
+}
+
 .scrollTop:hover {
   opacity: 1;
 }
@@ -80,6 +105,16 @@
   100% {
     opacity: 0.5;
   }
+}
+
+.contact {
+  background-color: transparent !important;
+}
+
+.contact img {
+  /* background-color: transparent !important; */
+  width: 45px;
+  height: 45px;
 }
 
 @keyframes App-logo-spin {

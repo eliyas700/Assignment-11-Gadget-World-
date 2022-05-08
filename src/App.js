@@ -19,6 +19,7 @@ import MyItems from "./Pages/MyItems/MyItems";
 import MyBlog from "./Pages/MyBlog/MyBlog";
 import About from "./Pages/AboutUs/About";
 import ScrollUp from "./Pages/ScrollToTop/ScrollUp";
+import Contact from "./Pages/Contact/Contact";
 function App() {
   return (
     <div className="App">
@@ -67,6 +68,7 @@ function App() {
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/*" element={<NotFound></NotFound>}></Route>
       </Routes>
+
       <ScrollUp></ScrollUp>
       <Footer></Footer>
     </div>
