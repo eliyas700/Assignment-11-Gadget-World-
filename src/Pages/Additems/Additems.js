@@ -102,10 +102,8 @@ const Additems = () => {
               {...register("img", { required: true })}
             />
             <textarea
-              className="mb-2"
+              className="mb-2 w-100"
               placeholder="Description"
-              cols="62"
-              rows="5"
               {...register("description", { required: true })}
             />
 
