@@ -52,6 +52,36 @@
   color: #61dafb;
 }
 
+.scrollTop {
+  position: fixed;
+  width: 44px;
+  height: 44px;
+  bottom: 50px;
+  left: 90%;
+  border-radius: 44px;
+  align-items: right;
+  justify-content: end;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+}
+
+.scrollTop:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
